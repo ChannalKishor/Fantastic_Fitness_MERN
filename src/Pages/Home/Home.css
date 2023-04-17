@@ -1,0 +1,45 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 3rem;
+    background-color: black;
+    color: white;
+}
+
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5rem;
+}
+
+.nav ul li{
+    list-style: none;
+    padding-right: 3rem;
+    transition: 1s ease;
+}
+
+.nav ul li:hover{
+    cursor: pointer;
+    color: orangered;
+}
+
+.hero{
+    background-image: url("../../Images/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    max-width: 100%;
+}
+
+.hero h2, p{
+    color: white;
+    padding-top: 9%;
+    padding-left: 10%;
+}
+
+.heroBtn{
+    margin-left: 20%;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+}

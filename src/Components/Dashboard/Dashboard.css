@@ -1,0 +1,22 @@
+.profile img {
+    border-radius: 50%;
+    height: 40vh;
+    width: 30vw;
+}
+
+.Dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 5rem;
+}
+
+.bmi, .calorie, .heart-rate, .oxygen-value, .steps-taken{
+    display: flex;
+    padding: 0px 10px;
+}
+
+.data{
+    /* margin-left: -5rem; */
+    display: flex;
+    padding-right: 3rem;
+}
