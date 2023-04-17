@@ -1,0 +1,30 @@
+.sliders{
+    width: 500px;
+    margin-left: 30%;
+}
+
+.slide_item{
+    background: white;
+    padding: 39px;
+    border-radius: 5px;
+}
+
+.slide_img_1 img, .slide_img_2 img, .slide_img_3 img{
+    width: 100%;
+}
+
+.slide_img_1{
+    background: #eeeaff;
+}
+
+.slide_img_2{
+    background: #d3cef2;
+}
+
+.slide_img_3{
+    background: rgba(141,141, 235, 1) 80%;
+}
+
+.slide_item h4{
+    color: black;
+}

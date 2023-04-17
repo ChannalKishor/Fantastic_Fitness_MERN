@@ -1,8 +1,13 @@
 .profile img {
     border-radius: 50%;
-    height: 40vh;
-    width: 30vw;
+    height: 55vh;
+    width: 28vw;
+    border: 2px solid blue;
+    background-size: cover;
+    margin-top: -1rem;
+    background-position: top;
 }
+
 
 .Dashboard{
     display: flex;
