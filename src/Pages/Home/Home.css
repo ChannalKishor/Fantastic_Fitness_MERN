@@ -8,10 +8,17 @@
     /* max-width: 100%; */
 }
 
-.hero h2, p{
+.hero h2{
     color: white;
-    padding-top: 9%;
-    padding-left: 10%;
+    padding-top:30%;
+    padding-left: 35%;
+    font-size: 28px;
+    font-weight: 800;
+
+}
+
+.hero button{
+margin-left: 45%;
 }
 
 .heroBtn{

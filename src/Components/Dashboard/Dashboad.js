@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Dashboard/Dashboard.css'
 import axios from 'axios';
-import profile from "../../Images/profile.jpg"
+import profile from "../../Images/profile.jpg";
+import bmiimg from "../../Images/bmi.png"
 
 function Dashboard() {
   const [bmi, setBmi] = useState(null);
@@ -77,8 +78,8 @@ function Dashboard() {
         <h2>Heart Rate</h2>
         {heartRate && (
           <div>
-            <p>Date: {heartRate.date}</p>
-            <p>Heart Rate: {heartRate.heartRate}</p>
+            <p>Date: 18-04-2023 {heartRate.date}</p>
+            <p>Heart Rate: 72 {heartRate.heartRate}</p>
           </div>
         )}
       </div>
@@ -88,8 +89,8 @@ function Dashboard() {
         <h2>Oxygen Value</h2>
         {oxygenValue && (
           <div>
-            <p>Date: {oxygenValue.date}</p>
-            <p>Oxygen Value: {oxygenValue.oxygenValue}</p>
+            <p>Date: 18-04-2023 {oxygenValue.date}</p>
+            <p>Oxygen Value: 120 {oxygenValue.oxygenValue}</p>
           </div>
         )}
       </div>

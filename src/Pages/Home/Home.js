@@ -17,8 +17,7 @@ const Home = () => {
 
       <section>
         <div className="hero">
-          <h2>AERTYUIOKJHGDSRTYUIOLNBVCDFGHJKL</h2>
-          <p>loremfhgvshhjdigbdsn:Lkhknk;lhubknlkhbnkldhfbnldld </p>
+          <h2>For Fitness, Performance and Life</h2>
           <button className="heroBtn">Get Started</button>
         </div>
       </section>

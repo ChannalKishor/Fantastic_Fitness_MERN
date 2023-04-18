@@ -252,7 +252,7 @@ const Exercise = () => {
       </div>
 
       <div id="training">
-      <div class="hero node-12">
+      <div class="hero1 node-12">
 <div class="overlay">
 <h1>TRAIN WITH US</h1>
 <p>The most comprehensive workout routines anywhere! Download workout plans any goal or experience level.</p>
