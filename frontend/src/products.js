@@ -7,7 +7,7 @@ const products = [
     brand: 'IronHaven ',
     category: 'gym',
     price: 20.99,
-    countInStock: 10,
+    countInStock: 3,
     rating: 4.5,
     numReviews: 12,
   },
