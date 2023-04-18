@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Yoga Mat',
     image: '/images/yogamat.jpeg',
     description: '1/2-Inch Extra Thick Exercise Yoga Mat',
@@ -12,7 +11,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Dumbbells',
     image: '/images/dumbells.avif',
     description:
@@ -25,7 +23,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'Whey Protein Powder',
     image: '/images/wheyprotein.jpeg',
     description:
@@ -38,7 +35,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Running Shoes',
     image: '/images/runningshoes2.jpeg',
     description: 'Running Shoes, Casual Tennis Fashion Sneaker Breathable',
@@ -50,7 +46,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Jump Rope',
     image: '/images/jumpropes.jpeg',
     description: 'Jump Rope, Tangle-Free Rapid Speed Jumping Rope Cable',
@@ -62,7 +57,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Boxing Gloves',
     image: '/images/boxinggloves2.jpeg',
     description:
