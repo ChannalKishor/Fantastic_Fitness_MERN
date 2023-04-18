@@ -1,0 +1,25 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 3rem;
+    background-color: black;
+    color: white;
+}
+
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5rem;
+}
+
+.nav ul li{
+    list-style: none;
+    padding-right: 3rem;
+    transition: 1s ease;
+}
+
+.nav ul li:hover{
+    cursor: pointer;
+    color: blue;
+}
