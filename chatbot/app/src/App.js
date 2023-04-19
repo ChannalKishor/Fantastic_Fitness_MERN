@@ -449,45 +449,96 @@ const bot_messages = [
 
   {
     id: "Basic",
-    message: `Here's a basic diet plan to help you reach your fitness goals:
-      - Breakfast: Scrambled eggs with spinach and whole grain toast
-      - Morning snack: Greek yogurt with mixed berries
-      - Lunch: Grilled chicken with mixed veggies and brown rice
-      - Afternoon snack: Apple slices with almond butter
-      - Dinner: Baked salmon with roasted sweet potato and asparagus
-      - Dessert (optional): Dark chocolate square`,
+    message: "Here's a basic diet plan to help you reach your fitness goals:",
+    trigger: "Basic points",
+  },
+
+  {
+    id: "Basic points",
+    component: (
+      <ol class="workout">
+        <li>
+          <strong>Breakfast</strong>: Scrambled eggs with spinach and whole
+          grain toast
+        </li>
+        <li>
+          <strong>Morning snack</strong>: Greek yogurt with mixed berries
+        </li>
+        <li>
+          <strong>Lunch</strong>: Grilled chicken with mixed veggies and brown
+          rice
+        </li>
+        <li>
+          <strong>Afternoon snack</strong>: Apple slices with almond butter
+        </li>
+        <li>
+          <strong>Dinner</strong>: Baked salmon with roasted sweet potato and
+          asparagus
+        </li>
+        <li>
+          <strong>Dessert (optional)</strong>: Dark chocolate square
+        </li>
+      </ol>
+    ),
     end: true,
   },
 
   {
     id: "Weight Loss",
-    message: `To lose weight, it's important to create a calorie deficit, which means consuming fewer calories than you burn each day. Here's a daily meal plan:
-      Breakfast (300 calories):
-        - 1 slice whole grain toast (70 calories)
-        - 2 scrambled eggs (140 calories)
-        - 1 small apple (90 calories)
-        
-      Snack (100 calories):
-        - 1/2 cup blueberries (40 calories)
-        - 1 low-fat string cheese (60 calories)
-        
-      Lunch (400 calories):
-        - Grilled chicken breast (120 calories)
-        - 1/2 cup brown rice (110 calories)
-        - 1 cup mixed vegetables (70 calories)
-        - 1 small orange (100 calories)
-        
-      Snack (100 calories):
-        - 1 medium carrot (25 calories)
-        - 2 tablespoons hummus (75 calories)
-        
-      Dinner (500 calories):
-        - Grilled salmon (200 calories)
-        - 1 cup quinoa (220 calories)
-        - 1 cup steamed broccoli (50 calories)
-        - 1 small banana (80 calories)
-        
-      Total calories: 1,400 calories`,
+    message:
+      "To lose weight, it's important to create a calorie deficit, which means consuming fewer calories than you burn each day. Here's a daily meal plan:",
+    trigger: "Weight Loss points",
+  },
+
+  {
+    id: "Weight Loss points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Breakfast (300 calories):
+            <ul>
+              <li>1 slice whole grain toast (70 calories)</li>
+              <li>2 scrambled eggs (140 calories)</li>
+              <li>1 small apple (90 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Snack (100 calories):
+            <ul>
+              <li>1/2 cup blueberries (40 calories)</li>
+              <li>1 low-fat string cheese (60 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Lunch (400 calories):
+            <ul>
+              <li>Grilled chicken breast (120 calories)</li>
+              <li>1/2 cup brown rice (110 calories)</li>
+              <li>1 cup mixed vegetables (70 calories)</li>
+              <li>1 small orange (100 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Snack (100 calories):
+            <ul>
+              <li>1 medium carrot (25 calories)</li>
+              <li>2 tablespoons hummus (75 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Dinner (500 calories):
+            <ul>
+              <li>Grilled salmon (200 calories)</li>
+              <li>1 cup quinoa (220 calories)</li>
+              <li>1 cup steamed broccoli (50 calories)</li>
+              <li>1 small banana (80 calories)</li>
+            </ul>
+          </li>
+        </ol>
+        <p class="total">Total calories: 1,400 calories</p>
+      </div>
+    ),
     end: true,
   },
 
