@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
-import { Button } from "semantic-ui-react";
+// import { Button } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 // import { Segment } from "semantic-ui-react";
@@ -40,6 +40,32 @@ const bot_messages = [
     message: "Hi {previousValue}, Please select what you are looking for?",
     trigger: "sections",
   },
+
+  {
+    id: "Continue message",
+    message: "Continue",
+    trigger: "Continue",
+  },
+
+  {
+    id: "Continue",
+    options: [
+      { value: "Yes", label: "Yes", trigger: "C Yes" },
+      { value: "No", label: "No", trigger: "C No" },
+    ],
+  },
+  {
+    id: "C Yes",
+    message: "Please select what you are looking for?",
+    trigger: "sections",
+  },
+  {
+    id: "C No",
+    message:
+      "See you again. I hope you got to know what you where looking for!",
+    end: true,
+  },
+
   {
     id: "sections",
     options: [
@@ -128,7 +154,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
   {
     id: "Bodyweight Beginner Workout",
@@ -153,7 +179,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -180,7 +206,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   // Intermediate Workout
@@ -238,7 +264,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -267,7 +293,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -296,7 +322,7 @@ const bot_messages = [
       </div>
     ),
 
-    end: true,
+    trigger: "Continue message",
   },
 
   // Advanced Workout
@@ -360,7 +386,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -389,7 +415,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -418,7 +444,7 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   // Diet Plan
@@ -483,7 +509,7 @@ const bot_messages = [
         </li>
       </ol>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -499,7 +525,7 @@ const bot_messages = [
       <div class="workout">
         <ol>
           <li>
-            Breakfast (300 calories):
+            <strong>Breakfast (300 calories)</strong>:
             <ul>
               <li>1 slice whole grain toast (70 calories)</li>
               <li>2 scrambled eggs (140 calories)</li>
@@ -507,14 +533,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-            Snack (100 calories):
+          <strong>Snack (100 calories)</strong>:
             <ul>
               <li>1/2 cup blueberries (40 calories)</li>
               <li>1 low-fat string cheese (60 calories)</li>
             </ul>
           </li>
           <li>
-            Lunch (400 calories):
+          <strong>Lunch (400 calories)</strong>:
             <ul>
               <li>Grilled chicken breast (120 calories)</li>
               <li>1/2 cup brown rice (110 calories)</li>
@@ -523,14 +549,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-            Snack (100 calories):
+          <strong>Snack (100 calories)</strong>:
             <ul>
               <li>1 medium carrot (25 calories)</li>
               <li>2 tablespoons hummus (75 calories)</li>
             </ul>
           </li>
           <li>
-            Dinner (500 calories):
+          <strong>Dinner (500 calories)</strong>:
             <ul>
               <li>Grilled salmon (200 calories)</li>
               <li>1 cup quinoa (220 calories)</li>
@@ -542,7 +568,7 @@ const bot_messages = [
         <p class="total">Total calories: 1,400 calories</p>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
@@ -558,7 +584,7 @@ const bot_messages = [
       <div class="workout">
         <ol>
           <li>
-            Breakfast (600-800 calories):
+          <strong>Breakfast (600-800 calories):</strong>
             <ul>
               <li>2-3 eggs (140-210 calories per egg)</li>
               <li>2 slices of whole-grain bread (200 calories)</li>
@@ -569,14 +595,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-            Mid-Morning Snack (300-400 calories):
+          <strong>Mid-Morning Snack (300-400 calories):</strong>
             <ul>
               <li>1 serving of mixed nuts (200-300 calories)</li>
               <li>1 banana (100 calories)</li>
             </ul>
           </li>
           <li>
-            Lunch (700-900 calories):
+          <strong>Lunch (700-900 calories):</strong>
             <ul>
               <li>
                 6 oz chicken breast (250-350 calories depending on preparation)
@@ -587,14 +613,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-            Afternoon Snack (300-400 calories):
+          <strong>Afternoon Snack (300-400 calories):</strong>
             <ul>
               <li>1 protein shake (200-300 calories)</li>
               <li>1 apple (100 calories)</li>
             </ul>
           </li>
           <li>
-            Dinner (800-1000 calories):
+          <strong>Dinner (800-1000 calories):</strong>
             <ul>
               <li>8 oz salmon (400-500 calories depending on preparation)</li>
               <li>2 cups of brown rice (300-400 calories)</li>
@@ -603,7 +629,7 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-            Evening Snack (300-400 calories):
+          <strong>Evening Snack (300-400 calories):</strong>
             <ul>
               <li>1 serving of Greek yogurt (150-200 calories)</li>
               <li>1 serving of mixed berries (100-150 calories)</li>
@@ -613,16 +639,29 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    end: true,
+    trigger: "Continue message",
   },
 
   {
     id: "Equipments Buying",
-    message: `Here are some of Equipments that we sell:
-      1. Cardio machines (treadmills, exercise bikes, ellipticals)
-      2. Strength training equipment (dumbbells, barbells, weight machines)
-      3. Yoga and Pilates equipment (mats, blocks, straps)`,
-    end: true,
+    message: "Here are some of Equipments that we sell:",
+    trigger: "Equipments list",
+  },
+
+  {
+    id: "Equipments list",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>Cardio machines (treadmills, exercise bikes, ellipticals)</li>
+          <li>
+            Strength training equipment (dumbbells, barbells, weight machines)
+          </li>
+          <li>Yoga and Pilates equipment (mats, blocks, straps)</li>
+        </ol>
+      </div>
+    ),
+    trigger:"Continue message",
   },
   {
     id: "Customer Support",
@@ -650,12 +689,13 @@ function App() {
       }}
     >
       <h3 style={{ marginRight: "auto" }}>Fitness App Chatbot</h3>
-      <Button
+      {/* <Button
         style={{ color: "black", background: "white" }}
         onClick={handleReload}
       >
-        <FontAwesomeIcon icon={faRedoAlt} />
-      </Button>
+        <FontAwesomeIcon icon={faRedoAlt} /> */}
+      {/* </Button> */}
+      <FontAwesomeIcon icon={faRedoAlt} className="reload-icon" onClick={handleReload} />
     </div>
   );
 
@@ -666,6 +706,7 @@ function App() {
         headerComponent={<CustomHeader />}
         steps={bot_messages}
         key={reload}
+        // botAvatar={"bot.png"}
       />
     </ThemeProvider>
   );
