@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 } */
+
+.workout {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  background-color: grey;
+  margin: 2px;
+  border-radius: 10%;
+}

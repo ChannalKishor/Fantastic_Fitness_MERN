@@ -1,7 +1,20 @@
-// import "./App.css";
+import "./App.css";
 import React from "react";
 import ChatBot from "react-simple-chatbot";
-import { Segment } from "semantic-ui-react";
+import { ThemeProvider } from "styled-components";
+// import { Segment } from "semantic-ui-react";
+
+const theme = {
+  background: "white",
+  fontFamily: "Arial",
+  headerBgColor: "black",
+  headerFontColor: "#fff",
+  headerFontSize: "15px",
+  botBubbleColor: "black",
+  botFontColor: "#fff",
+  userBubbleColor: "#fff",
+  userFontColor: "#4a4a4a",
+};
 
 const bot_messages = [
   {
@@ -30,9 +43,9 @@ const bot_messages = [
       { value: "Workouts", label: "Workouts", trigger: "Workouts" },
       { value: "Diet Plan", label: "Diet Plan", trigger: "Diet Plan" },
       {
-        value: "Equipments Bying",
-        label: "Equipments Bying",
-        trigger: "Equipments Bying",
+        value: "Equipments Buying",
+        label: "Equipments Buying",
+        trigger: "Equipments Buying",
       },
       {
         value: "Customer Support",
@@ -70,7 +83,7 @@ const bot_messages = [
       {
         value: "Full-body Dumbbell Workout",
         label: "Full-body Dumbbell Workout",
-        trigger: "Full-body Dumbbell Workout",
+        trigger: "B Full-body Dumbbell Workout",
       },
       {
         value: "Bodyweight Beginner Workout",
@@ -80,44 +93,90 @@ const bot_messages = [
       {
         value: "Resistance Band Workout",
         label: "Resistance Band Workout",
-        trigger: "Resistance Band Workout",
+        trigger: "B Resistance Band Workout",
       },
     ],
   },
 
   {
-    id: "Full-body Dumbbell Workout",
-    message: `Excellent choice! Here's your workout plan:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing
-    2. Dumbbell squats (3 sets of 12 reps)
-    3. Dumbbell chest press (3 sets of 12 reps)
-    4. Dumbbell lunges (3 sets of 12 reps)
-    5. Dumbbell rows (3 sets of 12 reps)
-    6. Plank (3 sets of 30 seconds)
-    7. Cool-down (5 minutes): stretching to prevent soreness`,
+    id: "B Full-body Dumbbell Workout",
+    message: "Excellent choice! Here's your workout plan:",
+    trigger: "B Full-body Dumbbell Workout points",
+  },
+
+  {
+    id: "B Full-body Dumbbell Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5-10 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li> Barbell squats (3 sets of 10-12 reps) </li>
+          <li> Barbell bench press (3 sets of 10-12 reps) </li>
+          <li> Bent-over barbell rows (3 sets of 10-12 reps) </li>
+          <li> Dumbbell shoulder press (3 sets of 10-12 reps) </li>
+          <li> Lat pull-downs (3 sets of 10-12 reps) </li>
+          <li> Tricep pushdowns (3 sets of 10-12 reps)</li>
+          <li> Bicep curls (3 sets of 10-12 reps) </li>
+          <li> Plank (3 sets of 60 seconds) </li>
+          <li> Cool-down (5-10 minutes): stretching to prevent soreness </li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
   {
     id: "Bodyweight Beginner Workout",
-    message: `Great choice for a workout! Here's a beginner bodyweight workout to get you started:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Squats (3 sets of 10 reps)
-    3. Push-ups (3 sets of 10 reps)
-    4. Lunges (3 sets of 10 reps)
-    5. Plank (3 sets of 30 seconds)
-    6. Cool-down (5 minutes): stretching to prevent soreness`,
-    end: true,
+    message:
+      "Great choice for a workout! Here's a beginner bodyweight workout to get you started:",
+    trigger: "Bodyweight Beginner Workout points",
   },
   {
-    id: "Resistance Band Workout",
-    message: `Great! Here's your workout plan:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Resistance band bicep curls (3 sets of 12 reps)
-    3. Resistance band lateral raises (3 sets of 12 reps)
-    4. Resistance band squats (3 sets of 12 reps)
-    5. Resistance band hamstring curls (3 sets of 12 reps)
-    6. Push-ups (3 sets of 12 reps)
-    7. Cool-down (5 minutes): stretching to prevent soreness`,
+    id: "Bodyweight Beginner Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Squats (3 sets of 10 reps)</li>
+          <li>Push-ups (3 sets of 10 reps)</li>
+          <li>Lunges (3 sets of 10 reps)</li>
+          <li>Plank (3 sets of 30 seconds)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
+    end: true,
+  },
+
+  {
+    id: "B Resistance Band Workout",
+    message: "Great! Here's your workout plan:",
+    trigger: "B Resistance Band Workout points",
+  },
+
+  {
+    id: "B Resistance Band Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Resistance band bicep curls (3 sets of 12 reps)</li>
+          <li>Resistance band lateral raises (3 sets of 12 reps)</li>
+          <li>Resistance band squats (3 sets of 12 reps)</li>
+          <li>Resistance band hamstring curls (3 sets of 12 reps)</li>
+          <li>Push-ups (3 sets of 12 reps)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
 
@@ -134,7 +193,7 @@ const bot_messages = [
       {
         value: "Full-body Dumbbell Workout",
         label: "Full-body Dumbbell Workout",
-        trigger: "Full-body Dumbbell Workout",
+        trigger: "I Full-body Dumbbell Workout",
       },
       {
         value: "Bodyweight Intermediate Workout",
@@ -144,49 +203,96 @@ const bot_messages = [
       {
         value: "Resistance Band Workout",
         label: "Resistance Band Workout",
-        trigger: "Resistance Band Workout",
+        trigger: "I Resistance Band Workout",
       },
     ],
   },
 
   {
-    id: "Full-body Dumbbell Workout",
-    message: `Excellent choice! Here's your workout plan:
-    1. Warm-up (5-10 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Barbell squats (3 sets of 10-12 reps)
-    3. Barbell bench press (3 sets of 10-12 reps)
-    4. Bent-over barbell rows (3 sets of 10-12 reps)
-    5. Dumbbell shoulder press (3 sets of 10-12 reps)
-    6. Lat pull-downs (3 sets of 10-12 reps)
-    7. Tricep pushdowns (3 sets of 10-12 reps)
-    8. Bicep curls (3 sets of 10-12 reps)
-    9. Plank (3 sets of 60 seconds)
-    10. Cool-down (5-10 minutes): stretching to prevent soreness`,
+    id: "I Full-body Dumbbell Workout",
+    message: "Great! Here's your workout plan:",
+    trigger: "I Full-body Dumbbell Workout points",
+  },
+
+  {
+    id: "I Full-body Dumbbell Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5-10 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Barbell squats (3 sets of 10-12 reps)</li>
+          <li>Barbell bench press (3 sets of 10-12 reps)</li>
+          <li>Bent-over barbell rows (3 sets of 10-12 reps)</li>
+          <li>Dumbbell shoulder press (3 sets of 10-12 reps)</li>
+          <li>Lat pull-downs (3 sets of 10-12 reps)</li>
+          <li>Tricep pushdowns (3 sets of 10-12 reps)</li>
+          <li>Bicep curls (3 sets of 10-12 reps)</li>
+          <li>Plank (3 sets of 60 seconds)</li>
+          <li>Cool-down (5-10 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
+
   {
     id: "Bodyweight Intermediate Workout",
-    message: `Great choice for a workout! Here's a beginner bodyweight workout to get you started:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Bodyweight squats (3 sets of 12 reps)
-    3. Push-ups (3 sets of 12 reps)
-    4. Lunges (3 sets of 12 reps)
-    5. Pull-ups or inverted rows (3 sets of 8 reps)
-    6. Plank (3 sets of 30 seconds)
-    7. Cool-down (5 minutes): stretching to prevent soreness`,
+    message:
+      "Great choice for a workout! Here's a beginner bodyweight workout to get you started:",
+    trigger: "Bodyweight Intermediate Workout points",
+  },
+
+  {
+    id: "Bodyweight Intermediate Workout points",
+
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Bodyweight squats (3 sets of 12 reps)</li>
+          <li>Push-ups (3 sets of 12 reps)</li>
+          <li>Lunges (3 sets of 12 reps)</li>
+          <li>Pull-ups or inverted rows (3 sets of 8 reps)</li>
+          <li>Plank (3 sets of 30 seconds)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
+
   {
-    id: "Resistance Band Workout",
-    message: `Great! Here's your workout plan:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Resistance band squats (3 sets of 12 reps)
-    3. Resistance band push-ups (3 sets of 12 reps)
-    4. Resistance band bicep curls (3 sets of 12 reps)
-    5. Resistance band tricep extensions (3 sets of 12 reps)
-    6. Resistance band lateral pulls (3 sets of 12 reps)
-    7. Plank (3 sets of 30 seconds)
-    8. Cool-down (5 minutes): stretching to prevent soreness`,
+    id: "I Resistance Band Workout",
+    message: "Great! Here's your workout plan:",
+    trigger: "I Resistance Band Workout points",
+  },
+
+  {
+    id: "I Resistance Band Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Resistance band squats (3 sets of 12 reps)</li>
+          <li>Resistance band push-ups (3 sets of 12 reps)</li>
+          <li>Resistance band bicep curls (3 sets of 12 reps)</li>
+          <li>Resistance band tricep extensions (3 sets of 12 reps)</li>
+          <li>Resistance band lateral pulls (3 sets of 12 reps)</li>
+          <li>Plank (3 sets of 30 seconds)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
+
     end: true,
   },
 
@@ -194,8 +300,8 @@ const bot_messages = [
   {
     id: "Advanced",
     message:
-    "Perfect. Here are some intermediate strength training workouts you can choose from:",
-    trigger: "Advanced Workout"
+      "Perfect. Here are some intermediate strength training workouts you can choose from:",
+    trigger: "Advanced Workout",
   },
   {
     id: "Advanced Workout",
@@ -203,7 +309,7 @@ const bot_messages = [
       {
         value: "Full-body Dumbbell Workout",
         label: "Full-body Dumbbell Workout",
-        trigger: "Full-body Dumbbell Workout",
+        trigger: "A Full-body Dumbbell Workout",
       },
       {
         value: "Bodyweight Advanced Workout",
@@ -213,69 +319,198 @@ const bot_messages = [
       {
         value: "Resistance Band Workout",
         label: "Resistance Band Workout",
-        trigger: "Resistance Band Workout",
+        trigger: "A Resistance Band Workout",
       },
     ],
   },
 
   {
-    id: "Full-body Dumbbell Workout",
-    message: `Excellent choice! Here's your workout plan:
-    1. Warm-up (10 minutes): dynamic stretching to loosen up your muscles
-    2. Dumbbell bench press (4 sets of 8 reps)
-    3. Dumbbell incline bench press (4 sets of 8 reps)
-    4. Dumbbell flyes (4 sets of 8 reps)
-    5. Dumbbell curls (4 sets of 8 reps)
-    6. Hammer curls (4 sets of 8 reps)
-    7. Tricep extensions (4 sets of 8 reps)
-    8. Tricep kickbacks (4 sets of 8 reps)
-    9. Seated dumbbell press (4 sets of 8 reps)
-    10. Lateral raises (4 sets of 8 reps)
-    11. Rear delt flyes (4 sets of 8 reps)
-    12. Dumbbell squats (4 sets of 8 reps)
-    13. Dumbbell lunges (4 sets of 8 reps)
-    14. Deadlifts (4 sets of 8 reps)
-    15. Leg curls (4 sets of 8 reps)
-    16. Plank (3 sets of 1 minute)
-    17. Cool-down (10 minutes): static stretching to prevent injury`,
-    end: true,
+    id: "A Full-body Dumbbell Workout",
+    message: "Excellent choice! Here's your workout plan:",
+    trigger: "I Full-body Dumbbell Workout points",
   },
+
   {
-    id: "Bodyweight Advanced Workout",
-    message: `Great choice for a workout! Here's a beginner bodyweight workout to get you started:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing
-    2. Plyometric push-ups (3 sets of 12 reps)
-    3. Bulgarian split squats (3 sets of 12 reps each leg)
-    4. Single-leg deadlifts (3 sets of 12 reps each leg)
-    5. Pull-ups (3 sets of 10 reps)
-    6. Dips (3 sets of 10 reps)
-    7. Burpees (3 sets of 12 reps)
-    8. Cool-down (5 minutes): stretching to prevent soreness`,
-    end: true,
-  },
-  {
-    id: "Resistance Band Workout",
-    message: `Great! Here's your workout plan:
-    1. Warm-up (5 minutes): light cardio to get your heart rate up and blood flowing 
-    2. Resistance band squats (4 sets of 12 reps)
-    3. Resistance band chest press (4 sets of 12 reps)
-    4. Resistance band bicep curls (4 sets of 12 reps)
-    5. Resistance band tricep extensions (4 sets of 12 reps)
-    6. Resistance band rows (4 sets of 12 reps)
-    7. Resistance band deadlifts (4 sets of 12 reps)
-    8. Plank (3 sets of 1 minute)
-    9. Cool-down (5 minutes): stretching to prevent soreness`,
+    id: "A Full-body Dumbbell Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (10 minutes): dynamic stretching to loosen up your muscles
+          </li>
+          <li>Dumbbell bench press (4 sets of 8 reps)</li>
+          <li>Dumbbell incline bench press (4 sets of 8 reps)</li>
+          <li>Dumbbell flyes (4 sets of 8 reps)</li>
+          <li>Dumbbell curls (4 sets of 8 reps)</li>
+          <li>Hammer curls (4 sets of 8 reps)</li>
+          <li>Tricep extensions (4 sets of 8 reps)</li>
+          <li>Tricep kickbacks (4 sets of 8 reps)</li>
+          <li>Seated dumbbell press (4 sets of 8 reps)</li>
+          <li>Lateral raises (4 sets of 8 reps)</li>
+          <li>Rear delt flyes (4 sets of 8 reps)</li>
+          <li>Dumbbell squats (4 sets of 8 reps)</li>
+          <li>Dumbbell lunges (4 sets of 8 reps)</li>
+          <li>Deadlifts (4 sets of 8 reps)</li>
+          <li>Leg curls (4 sets of 8 reps)</li>
+          <li>Plank (3 sets of 1 minute)</li>
+          <li>Cool-down (10 minutes): static stretching to prevent injury</li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
 
   {
-    id: "Diet Plan",
-    message: "Angular issue",
+    id: "Bodyweight Advanced Workout",
+    message:
+      "Great choice for a workout! Here's a beginner bodyweight workout to get you started:",
+    trigger: "Bodyweight Advanced Workout points",
+  },
+
+  {
+    id: "Bodyweight Advanced Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Plyometric push-ups (3 sets of 12 reps)</li>
+          <li>Bulgarian split squats (3 sets of 12 reps each leg)</li>
+          <li>Single-leg deadlifts (3 sets of 12 reps each leg)</li>
+          <li>Pull-ups (3 sets of 10 reps)</li>
+          <li>Dips (3 sets of 10 reps)</li>
+          <li>Burpees (3 sets of 12 reps)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
+
   {
-    id: "Equipments Bying",
-    message: "Angular issue",
+    id: "A Resistance Band Workout",
+    message: "Great! Here's your workout plan:",
+    trigger: "A Resistance Band Workout points",
+  },
+
+  {
+    id: "A Resistance Band Workout points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Warm-up (5 minutes): light cardio to get your heart rate up and
+            blood flowing
+          </li>
+          <li>Resistance band squats (4 sets of 12 reps)</li>
+          <li>Resistance band chest press (4 sets of 12 reps)</li>
+          <li>Resistance band bicep curls (4 sets of 12 reps)</li>
+          <li>Resistance band tricep extensions (4 sets of 12 reps)</li>
+          <li>Resistance band rows (4 sets of 12 reps)</li>
+          <li>Resistance band deadlifts (4 sets of 12 reps)</li>
+          <li>Plank (3 sets of 1 minute)</li>
+          <li>Cool-down (5 minutes): stretching to prevent soreness</li>
+        </ol>
+      </div>
+    ),
+    end: true,
+  },
+
+  // Diet Plan
+
+  {
+    id: "Diet Plan",
+    message: "Great choice! What type of diet plan would you like to follow",
+    trigger: "Type of diet plan",
+  },
+
+  {
+    id: "Type of diet plan",
+    options: [
+      {
+        value: "Basic",
+        label: "Basic",
+        trigger: "Basic",
+      },
+      {
+        value: "Weight Loss",
+        label: "Weight Loss",
+        trigger: "Weight Loss",
+      },
+      {
+        value: "Weight Gain",
+        label: "Weight Gain",
+        trigger: "Weight Gain",
+      },
+    ],
+  },
+
+  {
+    id: "Basic",
+    message: `Here's a basic diet plan to help you reach your fitness goals:
+      - Breakfast: Scrambled eggs with spinach and whole grain toast
+      - Morning snack: Greek yogurt with mixed berries
+      - Lunch: Grilled chicken with mixed veggies and brown rice
+      - Afternoon snack: Apple slices with almond butter
+      - Dinner: Baked salmon with roasted sweet potato and asparagus
+      - Dessert (optional): Dark chocolate square`,
+    end: true,
+  },
+
+  {
+    id: "Weight Loss",
+    message: `To lose weight, it's important to create a calorie deficit, which means consuming fewer calories than you burn each day. Here's a daily meal plan:
+      Breakfast (300 calories):
+        - 1 slice whole grain toast (70 calories)
+        - 2 scrambled eggs (140 calories)
+        - 1 small apple (90 calories)
+        
+      Snack (100 calories):
+        - 1/2 cup blueberries (40 calories)
+        - 1 low-fat string cheese (60 calories)
+        
+      Lunch (400 calories):
+        - Grilled chicken breast (120 calories)
+        - 1/2 cup brown rice (110 calories)
+        - 1 cup mixed vegetables (70 calories)
+        - 1 small orange (100 calories)
+        
+      Snack (100 calories):
+        - 1 medium carrot (25 calories)
+        - 2 tablespoons hummus (75 calories)
+        
+      Dinner (500 calories):
+        - Grilled salmon (200 calories)
+        - 1 cup quinoa (220 calories)
+        - 1 cup steamed broccoli (50 calories)
+        - 1 small banana (80 calories)
+        
+      Total calories: 1,400 calories`,
+    end: true,
+  },
+
+  {
+    id: "Weight Gain",
+    message: `For weight gain, you need to consume more calories than you burn. Here's a sample meal plan for you:
+      - Breakfast: Oatmeal with peanut butter, banana, and a glass of whole milk
+      - Mid-morning snack: Greek yogurt with granola and mixed berries
+      - Lunch: Grilled chicken breast with quinoa and roasted vegetables
+      - Afternoon snack: Avocado toast with boiled eggs
+      - Dinner: Salmon with sweet potato and steamed broccoli
+      - Evening snack: Protein shake made with whole milk, banana, and peanut butter
+  
+      Make sure to eat at least 3,000 calories per day and include healthy fats, lean protein, and complex carbs in your meals. Also, stay hydrated and avoid junk food as much as possible.`,
+    end: true,
+  },
+
+  {
+    id: "Equipments Buying",
+    message: `Here are some of Equipments that we sell:
+      1. Cardio machines (treadmills, exercise bikes, ellipticals)
+      2. Strength training equipment (dumbbells, barbells, weight machines)
+      3. Yoga and Pilates equipment (mats, blocks, straps)`,
     end: true,
   },
   {
@@ -287,11 +522,10 @@ const bot_messages = [
 
 function App() {
   return (
-    <>
-      <Segment floated="right">
-        <ChatBot steps={bot_messages} />
-      </Segment>
-    </>
+    <ThemeProvider theme={theme}>
+      {/* <ChatBot steps={bot_messages} />; */}
+      <ChatBot steps={bot_messages} />
+    </ThemeProvider>
   );
 }
 
