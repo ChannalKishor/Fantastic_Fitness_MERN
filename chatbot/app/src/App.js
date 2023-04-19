@@ -1,7 +1,10 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
+import { Button } from "semantic-ui-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 // import { Segment } from "semantic-ui-react";
 
 const theme = {
@@ -544,15 +547,72 @@ const bot_messages = [
 
   {
     id: "Weight Gain",
-    message: `For weight gain, you need to consume more calories than you burn. Here's a sample meal plan for you:
-      - Breakfast: Oatmeal with peanut butter, banana, and a glass of whole milk
-      - Mid-morning snack: Greek yogurt with granola and mixed berries
-      - Lunch: Grilled chicken breast with quinoa and roasted vegetables
-      - Afternoon snack: Avocado toast with boiled eggs
-      - Dinner: Salmon with sweet potato and steamed broccoli
-      - Evening snack: Protein shake made with whole milk, banana, and peanut butter
-  
-      Make sure to eat at least 3,000 calories per day and include healthy fats, lean protein, and complex carbs in your meals. Also, stay hydrated and avoid junk food as much as possible.`,
+    message:
+      "For weight gain, you need to consume more calories than you burn. Here's a sample meal plan for you:",
+    trigger: "Weight Gain points",
+  },
+
+  {
+    id: "Weight Gain points",
+    component: (
+      <div class="workout">
+        <ol>
+          <li>
+            Breakfast (600-800 calories):
+            <ul>
+              <li>2-3 eggs (140-210 calories per egg)</li>
+              <li>2 slices of whole-grain bread (200 calories)</li>
+              <li>1 cup of whole milk (150 calories)</li>
+              <li>
+                1 cup of oatmeal (150-300 calories depending on added toppings)
+              </li>
+            </ul>
+          </li>
+          <li>
+            Mid-Morning Snack (300-400 calories):
+            <ul>
+              <li>1 serving of mixed nuts (200-300 calories)</li>
+              <li>1 banana (100 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Lunch (700-900 calories):
+            <ul>
+              <li>
+                6 oz chicken breast (250-350 calories depending on preparation)
+              </li>
+              <li>1 large sweet potato (150-200 calories)</li>
+              <li>2 cups of mixed vegetables (100-150 calories)</li>
+              <li>2 tbsp of olive oil (120 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Afternoon Snack (300-400 calories):
+            <ul>
+              <li>1 protein shake (200-300 calories)</li>
+              <li>1 apple (100 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Dinner (800-1000 calories):
+            <ul>
+              <li>8 oz salmon (400-500 calories depending on preparation)</li>
+              <li>2 cups of brown rice (300-400 calories)</li>
+              <li>2 cups of mixed vegetables (100-150 calories)</li>
+              <li>2 tbsp of olive oil (120 calories)</li>
+            </ul>
+          </li>
+          <li>
+            Evening Snack (300-400 calories):
+            <ul>
+              <li>1 serving of Greek yogurt (150-200 calories)</li>
+              <li>1 serving of mixed berries (100-150 calories)</li>
+              <li>1 serving of granola (100 calories)</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    ),
     end: true,
   },
 
@@ -572,10 +632,41 @@ const bot_messages = [
 ];
 
 function App() {
+  const [reload, setReload] = useState(false);
+
+  const handleReload = () => {
+    setReload(!reload);
+  };
+
+  const CustomHeader = () => (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        background: "black",
+        color: "white",
+        paddingLeft: "10px",
+        paddingRight: "10px",
+      }}
+    >
+      <h3 style={{ marginRight: "auto" }}>Fitness App Chatbot</h3>
+      <Button
+        style={{ color: "black", background: "white" }}
+        onClick={handleReload}
+      >
+        <FontAwesomeIcon icon={faRedoAlt} />
+      </Button>
+    </div>
+  );
+
   return (
     <ThemeProvider theme={theme}>
       {/* <ChatBot steps={bot_messages} />; */}
-      <ChatBot steps={bot_messages} />
+      <ChatBot
+        headerComponent={<CustomHeader />}
+        steps={bot_messages}
+        key={reload}
+      />
     </ThemeProvider>
   );
 }
