@@ -147,6 +147,7 @@
 
 .trainers{
     margin-left: 20%;
+    display: flex;
 }
 
 .trainer{
@@ -198,4 +199,50 @@
   text-align: center;
   
   font-weight: 800;
+}
+
+
+/* ipad */
+@media (min-width: 700px) and (max-width: 1180px){
+.navbar{
+  margin-left: 15%;
+}
+
+.trainers {
+  margin-left: 0%;
+}
+}
+
+@media (min-width: 350px) and (max-width:699px){
+  .navbar{
+    margin-left: 5%;
+  }
+  .navbar a{
+    padding: 10px 20px;
+  }
+
+  .css-1dbez26-MuiFormControl-root-MuiTextField-root {
+    width: 360px;
+}
+
+.trainers{
+  display: block;
+}
+
+.t_head {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 40px;
+}
+
+.t_para2{
+  top: 75%;
+    left: 10%;
+    width: 80%;
+}
+
+.overlay p{
+  margin-top: -10rem;
+}
 }

@@ -53,7 +53,7 @@ const Home = () => {
           friendships, which plays a vital role in physical and mental wellness
           for all of us.</p>
         </div>
-        <img src={miximg} alt="" />
+        <img src={miximg} alt=""  className="homeimg"/>
       </div>
       <br />
       <section>

@@ -32,7 +32,7 @@ const ContactUs = () => {
     <div className="contactmain">
       <h2>Contact Us</h2>
       <div className="contactsub">
-        <div>
+        <div className="phone">
           <h5>
             <img src={call} alt="" className="imageicon" /> Phone no: 857-313-0000
           </h5>

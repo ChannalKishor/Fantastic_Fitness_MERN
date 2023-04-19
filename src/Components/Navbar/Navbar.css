@@ -23,3 +23,24 @@
     cursor: pointer;
     color: blue;
 }
+
+
+/* ipad */
+@media (min-width: 700px) and (max-width: 1180px){
+    .hero{
+        height: 50vh;
+    }
+
+    .hero h2 {
+        padding-top: 45%;
+        padding-left: 25%;
+    }
+
+    .hero button {
+        margin-left: 43%;
+    }
+
+    .nav{
+        padding-right: 13rem;
+    }
+}

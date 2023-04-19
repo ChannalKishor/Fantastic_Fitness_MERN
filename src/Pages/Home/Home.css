@@ -45,3 +45,60 @@ p{
     margin-left: 3rem;
     padding-top: 8rem;
 }
+
+
+/* ipad */
+@media (min-width: 700px) and (max-width: 1180px){
+    .homeimg{
+        height: 600px;
+    margin-top: 45%;
+    }
+
+    .hero{
+        height: 50vh;
+    }
+
+    .hero h2 {
+        padding-top: 45%;
+        padding-left: 25%;
+    }
+
+    .hero button {
+        margin-left: 43%;
+    }
+}
+
+/* phone */
+
+@media (min-width:350px) and (max-width:699px){
+    .hero{
+        max-width: 100%;
+        height: 35vh;
+    }
+
+    .hero h2{
+        padding-top: 45%;
+        padding-left: 8%;
+        font-size: 20px;
+    }
+
+    .hero button {
+        margin-left: 35%;
+    }
+
+    .info{
+        display: block;
+    }
+
+    .homeimg{
+        height: 300px;
+        margin-left: 25%;
+    }
+
+    .textinfo {
+        margin-left: 1rem;
+        padding-top: 0rem;
+        font-size: 15px;
+        width:120%;
+    }
+}

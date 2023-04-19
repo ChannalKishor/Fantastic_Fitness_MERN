@@ -289,7 +289,7 @@ const Exercise = () => {
         </section>
         <div className="trainersmain">
           <h2 style={{textAlign:"center"}}>Our Trainers</h2>
-          <div style={{ display: "flex" }} className="trainers">
+          <div className="trainers">
             <div className="trainer">
               <img src={trainer1} alt="" />
               <h4>Name</h4>
@@ -308,7 +308,7 @@ const Exercise = () => {
               <p>Starts</p>
             </div>
           </div>
-          <div style={{ display: "flex" }} className="trainers">
+          <div className="trainers">
             <div className="trainer">
               <img src={trainer4} alt="" />
               <h4>Name</h4>
