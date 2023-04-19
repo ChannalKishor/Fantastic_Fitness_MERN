@@ -269,26 +269,26 @@ const Exercise = () => {
       style={{ display: visibleSection === "training" ? "block" : "none" }}>
         <div class="hero1 node-12">
           <div class="overlay">
-            <h1>TRAIN WITH US</h1>
-            <p>
+            <h1 className="t_head">TRAIN WITH US</h1>
+            {/* <p className="t_para1">
               The most comprehensive workout routines anywhere! Download workout
               plans any goal or experience level.
-            </p>
-            <p>
+            </p> */}
+            <p className="t_para2">
               Choose a category that best suits the workout you're searching
               for. Once in the category, use the sort and filter options to find
               the right workout for your experience and goals.
             </p>
           </div>
         </div>
-        <h2>Our Categories</h2>
+        <h2 style={{textAlign:"center"}}>Our Categories</h2>
         <section className="services" style={{ display: "flex" }}>
           <Service title="Cardio" imgUrl={ImageCardio} navi="/abs" />
           <Service title="Abs Workout" imgUrl={ImageRun} navi="/abs" />
           <Service title="Fitness Events" imgUrl={ImageTrainer} navi="/abs" />
         </section>
         <div className="trainersmain">
-          <h2>Our Trainers</h2>
+          <h2 style={{textAlign:"center"}}>Our Trainers</h2>
           <div style={{ display: "flex" }} className="trainers">
             <div className="trainer">
               <img src={trainer1} alt="" />

@@ -119,6 +119,7 @@
     position: relative;
     background-size: cover;
     background-position: 50% 50%;
+    margin-top: 2rem;
 }
 
 .hero .overlay {
@@ -138,12 +139,13 @@
 
 .overlay p{
     color:white;
-    font-weight: 600;
+    background: rgb(155, 155, 155, 60%);
+    font-weight: 800;
     font-size: larger;
     margin-top:-3rem
 }
 
-.trainersmain{
+.trainers{
     margin-left: 20%;
 }
 
@@ -179,4 +181,21 @@
 .react-horizontal-scrolling-menu--scroll-container {
   display:flex;
   overflow: hidden;
+}
+
+.t_head{
+  position: absolute;
+  top:40%;
+  left:35%;
+  font-size: 50px;
+}
+
+.t_para2{
+  position: absolute;
+  top:75%;
+  left:25%;
+  width:50%;
+  text-align: center;
+  
+  font-weight: 800;
 }

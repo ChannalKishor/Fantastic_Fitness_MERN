@@ -7,11 +7,12 @@
 
 .eachblock{
     width: 33.33%;
+    margin-left: 1.5rem;
 }
 
 .eachblock img{
-    width:450px;
-    height:350px
+    width:400px;
+    height:300px
 }
 
 .eachblock h2{
