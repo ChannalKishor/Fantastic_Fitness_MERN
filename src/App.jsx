@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/login/login";
 import UserRegistation from "./pages/login/Register";
 import Homelogin from "./pages/login/Home";
+import UserTable from "./pages/Admin/admin";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/home" element={<Homelogin />} />
         <Route path="/register" element={<UserRegistation />} />
         <Route path="/" element={<Login />} />
+        <Route path="/admin" element={<UserTable />} />
       </Routes>
       <Footer />
     </BrowserRouter>

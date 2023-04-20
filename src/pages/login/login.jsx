@@ -14,23 +14,32 @@ function Login() {
     event.preventDefault();
     try {
       await axios
-        .post("http://localhost:9992/student/login", {
+        .post("http://localhost:3001/user/login", {
           email: email,
           password: password,
         })
         .then(
           (res) => {
-            console.log(res);
-            const data = res.data;
-
-            if (data.status === true) {
-              alert("Login Successfully");
-              navigate("/home");
+            // console.log(res);
+            if (email === "admin@gmail.com" && password === "Admin@123") {
+              alert("Login Successfully as Admin");
+              navigate("/admin");
             } else {
-              alert("Login Failed");
+              const data = res.data;
+              console.log("data:", data);
+
+              if (data === true) {
+                alert("Login Successfully");
+                navigate("/home");
+              } else {
+                console.log("data.status:", data.status);
+                alert("Login Failed");
+              }
             }
           },
           (fail) => {
+            console.log(email);
+            console.log(password);
             console.error(fail); // Error!
           }
         );
