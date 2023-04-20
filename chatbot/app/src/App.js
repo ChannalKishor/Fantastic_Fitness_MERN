@@ -99,7 +99,7 @@ const TicketForm = (props) => {
 const bot_messages = [
   {
     id: "Greet",
-    message: "Hello, Welcome to Fitness App",
+    message: "Hello, Welcome to Fantastic Fitness.",
     trigger: "Ask Name",
   },
   {
@@ -139,7 +139,7 @@ const bot_messages = [
   {
     id: "C No",
     message:
-      "See you again. I hope you got to know what you where looking for!",
+      "See you again. I hope you got what you were looking for!",
     end: true,
   },
 
@@ -528,7 +528,7 @@ const bot_messages = [
 
   {
     id: "Diet Plan",
-    message: "Great choice! What type of diet plan would you like to follow",
+    message: "Great choice! What type of diet plan would you like to follow?",
     trigger: "Type of diet plan",
   },
 
@@ -770,7 +770,7 @@ const bot_messages = [
   {
     id: "Question response",
     message:
-      "I am sorry, I cannot answer that. Please contact support for further assistance.",
+      "I'm sorry, I cannot answer that. Please contact support for further assistance.",
     end: true,
   },
   {
