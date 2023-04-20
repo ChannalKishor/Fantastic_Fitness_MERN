@@ -68,25 +68,25 @@ export const values = [
     id: 1,
     icon: <SiOpenaigym />,
     title: "Value One",
-    desc: "Cleanliness and hygiene - A gym should prioritize cleanliness and hygiene by maintaining a clean and well-organized facility, providing clean towels and equipment.",
+    desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
   },
   {
     id: 2,
     icon: <SiOpenaigym />,
     title: "Value Two",
-    desc: "Customer service - A gym should prioritize excellent customer service by greeting members with a smile.",
+    desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
   },
   {
     id: 3,
     icon: <SiOpenaigym />,
     title: "Value Three",
-    desc: "Quality of equipment and facilities - A gym should provide high-quality equipment and facilities to ensure a safe and effective workout experience for its members.",
+    desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
   },
   {
     id: 4,
     icon: <SiOpenaigym />,
     title: "Value Four",
-    desc: "Personalization and customization - A gym should strive to provide a personalized and customized experience for its members by offering a range of workout options.",
+    desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
   },
 ];
 

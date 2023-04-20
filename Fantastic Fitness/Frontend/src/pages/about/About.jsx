@@ -11,7 +11,7 @@ import NavbarK from "../../components/Navbar.jsx"
 const About = () => {
   return (
     <>
-    <NavbarK/>
+    {/* <NavbarK/> */}
       <Header title="About us" image={HeaderImage}>
         We are a community-driven gym that focuses on a holistic approach to
         fitness, providing personalized plans, expert coaching, and

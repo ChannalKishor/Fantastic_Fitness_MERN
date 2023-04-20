@@ -15,7 +15,8 @@ const Trainers = () => {
 		<>
 		<Navbar/>
 			<Header image={HeaderImage} title="Our Trainers">
-				We have a myriad of trainers specializing in various aspects such as Strength Training, Zumba, Calisthenics, etc.
+				Adipisicing labore laboris ea sunt cillum ea velit.Adipisicing labore la
+				boris ea sunt cillum ea velit. sunt cillum ea velit.
 			</Header>
 			<section className="trainers section">
 				<div className="containerK trainers__container">

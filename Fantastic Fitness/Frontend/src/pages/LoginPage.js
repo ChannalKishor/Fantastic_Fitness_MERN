@@ -55,12 +55,12 @@ export default function LoginPage({...props}){
             <form className="box">
                 <label>
                     Email:
-                    <input type="text" className="recipe-input" onChange={(event)=>{setEmail(event.target.value)}}/>
+                    <input type="text" className="recipe-input" onChange={(event)=>{setEmail(event.target.value)}} required/>
                 </label>
                 <br/>
                 <label>
                     Recipe Name:
-                    <input type="text" className="recipe-input" onChange={(event)=>{setRecipeName(event.target.value)}} />
+                    <input type="text" className="recipe-input" onChange={(event)=>{setRecipeName(event.target.value)}} required/>
                 </label>
                 <br/>
                 <label>
@@ -76,12 +76,12 @@ export default function LoginPage({...props}){
                 
                 <label>
                     Ingredients:
-                    <textarea className="recipe-textarea" onChange={(event)=>{setIngredients(event.target.value)}} />
+                    <textarea className="recipe-textarea" onChange={(event)=>{setIngredients(event.target.value)}} required/>
                 </label>
                 <br/>
                 <label>
                     Description:
-                    <textarea className="recipe-textarea" onChange={(event)=>{setDescription(event.target.value)}} />
+                    <textarea className="recipe-textarea" onChange={(event)=>{setDescription(event.target.value)}} required/>
                 </label>
                 <br/>
                 <label>

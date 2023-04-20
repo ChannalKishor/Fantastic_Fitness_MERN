@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link to=""><li
             style={{marginTop:"1rem"}}>ContactUs</li></Link>
           </ul>
-          <h4 style={{ marginRight: "-5rem" }}>Welcome User !</h4>
+          <h4 style={{ marginRight: "-5rem", color:"white" }}><Link to="/">Logout</Link></h4>
         </div>
     </div>
   )

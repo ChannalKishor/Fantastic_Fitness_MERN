@@ -74,7 +74,7 @@ const TicketForm = (props) => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          style={{ width: "92%", padding: "8px" }}
+          style={{ width: "100%", padding: "8px" }}
         />
       </label>
       <label style={{ display: "block", margin: "10px 0" }}>
@@ -83,7 +83,7 @@ const TicketForm = (props) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{ width: "92%", padding: "8px" }}
+          style={{ width: "100%",padding: "8px" }}
         />
       </label>
       <label style={{ display: "block", margin: "10px 0" }}>

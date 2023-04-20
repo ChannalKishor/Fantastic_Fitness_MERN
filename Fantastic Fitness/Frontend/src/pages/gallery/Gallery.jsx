@@ -16,7 +16,8 @@ function Gallery() {
 		<>
 			<NavbarK/>
 			<Header title="Our Gallery" image={HeaderImage}>
-				Have a look at the gallery of Fantastic Fitness!
+				Quisquam id tenetur adipisci nesciunt ipsum amet in quibusdam,
+				architecto nostrum nobis, est, deserunt odio illum perspiciatis
 			</Header>
 			<section className="gallery section">
 				<div className="containerK gallery__container">

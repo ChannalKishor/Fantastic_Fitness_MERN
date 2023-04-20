@@ -116,7 +116,7 @@ export default function Settings(){
     const [animationSpeed, setAnimationSpeed] = useState(1)
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="section d-block">
                 <h2>Primary Theme</h2>
                 <div className="options-container">

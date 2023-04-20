@@ -17,7 +17,8 @@ const Values = () => {
 				<div className="values__right">
 					<SectionHead icon={<GiCutDiamond />} title="Values" />
 					<p>
-						Our values towards customer satisfaction culminates from the highest standards maintained by Fantastic Fitness.
+						anim et. Officia exercitation veniam consectetur ad labore pariatur
+						aonsectetur ad labore pariatur.
 					</p>
 					<div className="values__wrapper">
 						{values.map(({ id, icon, title, desc }) => {
