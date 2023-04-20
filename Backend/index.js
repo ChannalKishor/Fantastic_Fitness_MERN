@@ -7,7 +7,7 @@ var cors = require('cors');
 
 var port = process.env.PORT || 8080;
 
-mongoose.connect("mongodb://127.0.0.1:27017/test", { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/Finalproject", { useNewUrlParser: true });
 app.use(cors());
 // parse application/json
 app.use(bodyParser.json());

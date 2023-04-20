@@ -1,30 +1,47 @@
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { userLogin } from "../Actions/userAction";
 
 
 
-export default function LoginPage({...props}){
-    const [userName, setUserName] = useState('');
-    // console.log(userName);
-    const [password, setPassword] = useState('');
-    // console.log(password);
+export default function LoginPage({...props}){  
+    
     const [email, setEmail] = useState('');
+    const [recipeName, setRecipeName] = useState('');
+    const [category, setCategory] = useState('');
+    const [ingredients, setIngredients] = useState('');
+    const [description, setDescription] = useState('');
+    const [image, setImage] = useState(null);
+   
     // console.log(email);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleSignIn = async(e) => {
+    function ConvertToBase64(e){
+        console.log(e);
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload= () => {
+            console.log(reader.result);
+            setImage(reader.result);
+        };
+        reader.onerror= error => {
+            console.log("Error: ", error);
+
+        };
+    }
+
+    const handleSubmit = async(e) => {        
         e.preventDefault();
-   userLogin(userName,email,password)
+   userLogin(email,recipeName,category,ingredients,description,image)
     .then((res) => {
         console.log(res)
         if(res.data.validate){
             props.handle();
-            navigate('/home')
+            // navigate('/')
            }
         else{
-            alert('Enter valid credentials', res.message);
+            alert('Recipe Submitted Sucessfully', res.message);
            }
     }).catch((error) => {
         console.log(error)
@@ -32,25 +49,112 @@ export default function LoginPage({...props}){
     }
     return(
         <div className="login-page">
-            <h1> Login Page</h1>
+            <h1>Recipe Submit</h1>
             <form className="box">
-            <label>
+                <label>
                     Email:
-                    <input type="text" className="login-input" onChange={(event)=>{setEmail(event.target.value)}}/>
+                    <input type="text" className="recipe-input" onChange={(event)=>{setEmail(event.target.value)}}/>
                 </label>
                 <br/>
                 <label>
-                    Username:
-                    <input type="text" className="login-input" onChange={(event)=>{setUserName(event.target.value)}} />
+                    Recipe Name:
+                    <input type="text" className="recipe-input" onChange={(event)=>{setRecipeName(event.target.value)}} />
                 </label>
                 <br/>
                 <label>
-                    Password:
-                    <input type="password" className="login-input" onChange={(event)=>{setPassword(event.target.value)}}/>
+                    Category:
+                    <select class="recipe-input" onChange={(event) => setCategory(event.target.value)}>
+                    <option value="">Select category</option>
+                    <option value="Veg">Veg</option>
+                    <option value="Non-Veg">Non-Veg</option>
+                    <option value="Vegan">Vegan</option>
+                    </select>
                 </label>
                 <br/>
-                <button type="submit" className="login-button" onClick={(e)=>handleSignIn(e)}>Sign In</button>
+                
+                <label>
+                    Ingredients:
+                    <textarea className="recipe-input" onChange={(event)=>{setIngredients(event.target.value)}} />
+                </label>
+                <br/>
+                <label>
+                    Description:
+                    <textarea className="recipe-input" onChange={(event)=>{setDescription(event.target.value)}} />
+                </label>
+                <br/>
+                <label>
+                    Image:
+                    <input type="file" className="recipe-input" accept="image/*" onChange={ConvertToBase64} />
+                </label>
+                    {image && <img src={image} alt="Preview" className="recipe-image-preview" />}
+                <br/>
+                <button type="submit" className="recipe-submit-button" onClick={(e)=>handleSubmit(e)}>Submit</button>
             </form>
         </div>
     )
 }
+
+
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { userLogin } from "../Actions/userAction";
+
+// export default function RecipeForm({...props}){
+//     const [email, setEmail] = useState('');
+//     const [recipeName, setRecipeName] = useState('');
+//     const [category, setCategory] = useState('');
+//     const [ingredients, setIngredients] = useState('');
+//     const [description, setDescription] = useState('');
+//     const [image, setImage] = useState(null);
+//     const navigate = useNavigate();
+
+//     const handleImageChange = (event) => {
+//         setImage(URL.createObjectURL(event.target.files[0]));
+//     }
+
+//     const handleSubmit = async(e) => {
+//         e.preventDefault();
+//         // Submit the recipe form
+//         console.log("Recipe form submitted!");
+//     }
+
+//     return(
+//         <div className="recipe-form">
+//             <h1>Recipe Form</h1>
+//             <form className="box">
+//                 <label>
+//                     Email:
+//                     <input type="text" className="recipe-input" onChange={(event)=>{setEmail(event.target.value)}}/>
+//                 </label>
+//                 <br/>
+//                 <label>
+//                     Recipe Name:
+//                     <input type="text" className="recipe-input" onChange={(event)=>{setRecipeName(event.target.value)}} />
+//                 </label>
+//                 <br/>
+//                 <label>
+//                     Category:
+//                     <input type="text" className="recipe-input" onChange={(event)=>{setCategory(event.target.value)}} />
+//                 </label>
+//                 <br/>
+//                 <label>
+//                     Ingredients:
+//                     <textarea className="recipe-input" onChange={(event)=>{setIngredients(event.target.value)}} />
+//                 </label>
+//                 <br/>
+//                 <label>
+//                     Description:
+//                     <textarea className="recipe-input" onChange={(event)=>{setDescription(event.target.value)}} />
+//                 </label>
+//                 <br/>
+//                 <label>
+//                     Image:
+//                     <input type="file" className="recipe-input" accept="image/*" onChange={handleImageChange} />
+//                 </label>
+//                 {image && <img src={image} alt="Preview" className="recipe-image-preview" />}
+//                 <br/>
+//                 <button type="submit" className="recipe-submit-button" onClick={(e)=>handleSubmit(e)}>Submit</button>
+//             </form>
+//         </div>
+//     )
+// }

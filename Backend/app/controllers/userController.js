@@ -1,61 +1,49 @@
 const User = require('../models/user')
-const bcrypt = require("bcrypt");
 
 
-var passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/
-var reg = /[a-z.]*[@]\bnortheastern.edu/
-var user = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{6,10}$/
 
-async function hashPassword(password) {
-    const hash = await bcrypt.hash(password, 10);
-        return hash;
-}
 
-async function comparePassword(plaintextPassword, hash) {
-    const result = await bcrypt.compare(plaintextPassword, hash);
-    return result;
-    }
+var reg = /[a-z.]*[@]\bgmail.com/
+
+
+
 
     
 const register = async (req,res) =>{
     try{
 
-        let username=req.body.username;
+       
         let email=req.body.email;
-        let password=req.body.password;
+        let recipeName=req.body.recipeName;
+        let category=req.body.category;
+        let ingredients=req.body.ingredients;
+        let description=req.body.description;
+        let image=req.body.image;
+
 
         let existingEmails = await User.find({email:email}).exec();
         if(existingEmails.length > 0){
-            res.send({
-                status:200,
-                message:"Email id Already present"
-            })  
+            // res.send({
+            //     status:200,
+            //     message:"Email id Already present"
+            // })  
         }
         else if(!reg.test(email)){
             res.send({
                 status:200,
-                message:"Invalid email id-please enter an email with @northeastern.edu"
+                message:"Invalid email id-please enter an email with @gmail.com"
             })    
-        }
-
-        else if(!user.test(username)){
-            res.send({
-                status:200,
-                message:"Username must contain atleast one uppercase, one lowercase and length between 6 to 10"
-            })
-        }
-        else if(!passwordReg.test(password)){
-            res.send({
-                status:200,
-                message:"Password must contain at least a capital letter, at least a small letter, at least a number, at least a special character And minimum length of 8,12"
-            })    
-        }
+        }         
+        
         else {
-            let hashedPassword = await hashPassword(password);
+           
             let user = new User ({
-                username:username,
-                email:email,
-                password:hashedPassword
+                email: email,        
+                recipeName: recipeName,
+                category: category,
+                ingredients: ingredients,
+                description: description,
+                image: image
             })
             user.save()
             .then(user =>{
@@ -103,9 +91,12 @@ const getAllUsers = async (req,res) =>{
 const updateUsers = async(req,res) =>{
     try{
 
-        let username=req.body.username;
-        let email=req.params.email;
-        let password=req.body.password;
+        let email=req.body.email;
+        let recipeName=req.body.recipeName;
+        let category=req.body.category;
+        let ingredients=req.body.ingredients;
+        let description=req.body.description;
+        let image=req.body.image;
 
 
         if(!reg.test(email)){
@@ -115,24 +106,17 @@ const updateUsers = async(req,res) =>{
             })    
         }
 
-        else if(!user.test(username)){
-            res.send({
-                status:200,
-                message:"Username must contain atleast one uppercase, one lowercase and length between 6 to 10"
-            })
-        }
-        else if(!passwordReg.test(password)){
-            res.send({
-                status:200,
-                message:"Password must contain Should contain at least a capital letter Should contain at least a small letter Should contain at least a number Should contain at least a special character And minimum length of 8"
-            })    
-        }
+       
         else {
-            let hashedPassword = await hashPassword(password);
+           
             const resposnce = await User.updateOne({ email: email},
                 {
-                    username:username,
-                    password:hashedPassword
+                    email: email,        
+                    recipeName: recipeName,
+                    category: category,
+                    ingredients: ingredients,
+                    description: description,
+                    image: image
                 })
                 if(resposnce.matchedCount === 0 ){
                     res.send({
@@ -187,51 +171,51 @@ const deleteUser = async(req,res) =>{
 
 }
 
-const login = async(req,res) =>{
-    try{
-        let email = req.body.email;
-        let username = req.body.username;
-        let loginpassword = req.body.password;
+// const login = async(req,res) =>{
+//     try{
+//         let email = req.body.email;
+//         let username = req.body.username;
+//         let loginpassword = req.body.password;
 
-        let existingUsers = await User.find({email:email }).exec();
-        console.log(existingUsers);
-        if(existingUsers.length === 0){
-            res.send({
-                status:200,
-                message:"User not found",
-                validate:false
-            })
-        }
-        else {
-            if(existingUsers[0].username===username && await comparePassword(loginpassword,existingUsers[0].password)){
-                console.log(await comparePassword(loginpassword,existingUsers[0].password));
-                res.send({
-                    status:200,
-                    message:"Login Success",
-                    validate:true
-                })
-            }
-            else{
-                console.log(await comparePassword(loginpassword,existingUsers[0].password));
-                res.send({
-                    status:200,
-                    message:"Invalid username or password",
-                    validate:false
-                })
-            }
-        }
+//         let existingUsers = await User.find({email:email }).exec();
+//         console.log(existingUsers);
+//         if(existingUsers.length === 0){
+//             res.send({
+//                 status:200,
+//                 message:"User not found",
+//                 validate:false
+//             })
+//         }
+//         else {
+//             if(existingUsers[0].username===username && await comparePassword(loginpassword,existingUsers[0].password)){
+//                 console.log(await comparePassword(loginpassword,existingUsers[0].password));
+//                 res.send({
+//                     status:200,
+//                     message:"Login Success",
+//                     validate:true
+//                 })
+//             }
+//             else{
+//                 console.log(await comparePassword(loginpassword,existingUsers[0].password));
+//                 res.send({
+//                     status:200,
+//                     message:"Invalid username or password",
+//                     validate:false
+//                 })
+//             }
+//         }
 
-    }
+//     }
 
-    catch(err){
-        console.log(err);
-    }
-}
+//     catch(err){
+//         console.log(err);
+//     }
+// }
 
 module.exports = {
     register,
     getAllUsers,
     updateUsers,
     deleteUser,
-    login
+    
 }

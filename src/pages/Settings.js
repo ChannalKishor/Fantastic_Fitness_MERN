@@ -174,3 +174,51 @@ export default function Settings(){
         </div>
     )
 }
+
+// import React, { useEffect, useState} from "react";
+
+// export default function Settings({userData}) {
+//   const [data, setData] = useState([]);
+  
+//   useEffect(() => {
+//     fetch("http://localhost:8080/user/getAll",
+//     {method: "GET",
+//     }) // replace with the URL of your API endpoint
+//       .then((response) => response.json())
+//       .then((data) => {
+//         console.log(data, "userData");  
+//         setData(data.data);    
+//       })
+      
+//   }, []);
+   
+
+//   return (
+//             <div>
+//     <h1>Recipes</h1>
+//     <div className="card-container">
+//         {data.map((recipe) => (
+//         <div className="card" key={recipe._id}>
+//             <div className="card-header">
+//             <h2>{recipe.recipeName}</h2>
+//             </div>
+//             <div className="card-body">
+//             {/* <img src={recipe.image} alt={recipe.recipeName} /> */}
+//             <img width={20} height={20} src={`${recipe.image}`} alt={recipe.name} />
+
+//             <div className="recipe-details">
+//                 <p><strong>Email:</strong> {recipe.email}</p>
+//                 <p><strong>Category:</strong> {recipe.category}</p>
+//                 <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
+//                 <p><strong>Description:</strong> {recipe.description}</p>
+//             </div>
+//             </div>
+//         </div>
+//         ))}
+//     </div>
+//     </div>
+
+//   );
+// }
+
+
