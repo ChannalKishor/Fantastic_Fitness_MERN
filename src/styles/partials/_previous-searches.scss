@@ -27,16 +27,19 @@
             height: 35px;
         }
         input{
-            min-width: 250px;
+            min-width: 350px;
             padding: 0 .5em;
             border-radius: 5px 0 0 5px;
             outline: none;
             border: 1px solid #4d4d4d;
+            margin-top: 15px;
         }
         .btn{
             padding-block: 0;
-            padding-inline: .75em;
+            padding-inline: .7em;
             border-radius: 0 5px 5px 0;
+            margin: 1px;
+            
         }
     }
 }

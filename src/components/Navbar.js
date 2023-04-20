@@ -20,14 +20,20 @@ export default function Navbar(){
             icon: faList
         },
         {
+            name: "Diet Plan",
+            path: "/dietplan",
+            icon: faCog
+        },
+        {
             name: "Settings",
             path: "/settings",
             icon: faCog
         },
         {
-            name: "Diet Plan",
-            path: "/dietplan",
+            name: "Submit Recipes",
+            path: "/loginpage",
             icon: faCog
+
         }
     ]
 
@@ -37,13 +43,15 @@ export default function Navbar(){
     return (
         <>
             <div className="navbar container">
-                <Link to="/" className="logo">F<span>oo</span>diesHub</Link>
+                <Link to="/" className="logo">F<span>oo</span>diesFit</Link>
                 <div className="nav-links">
                     { links.map(link => (
                         <Link className={location.pathname === link.path ? "active" : ""} to={link.path} key={link.name}>{link.name}</Link>
                     )) }
                 </div>
                 <div onClick={() => setShowSidebar(true)} className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>

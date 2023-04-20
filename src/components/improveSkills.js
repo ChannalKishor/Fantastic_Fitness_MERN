@@ -1,12 +1,12 @@
 export default function ImproveSkills(){
 
     const list = [
+        "No more salads to loose weight",
         "Learn new recepies",
         "Experiment with food",
-        "Write your own recepies",
-        "Know nutrition facts",
-        "Get cooking tips",
-        "Get ranked"
+        "Maintain your fitness",
+        "Know nutrition facts",        
+        "Get fit"
     ]
 
     return(
@@ -21,7 +21,7 @@ export default function ImproveSkills(){
                 { list.map((item, index) => (
                     <p className="skill-item" key={index}>{item}</p>
                 )) }
-                <button className="btn">Sign Up</button>
+                <button className="btn">Our Diet Plan</button>
             </div>
        
         </div>

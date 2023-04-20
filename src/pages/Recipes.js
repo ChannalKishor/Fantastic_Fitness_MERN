@@ -4,23 +4,23 @@ import RecipeCard from "../components/RecipeCard"
 export default function Recipes(){
     const recipes = [
         {
-            title: "Chicken Pan Pizza",
-            image: "/img/gallery/img_1.jpg",
+            title: "Quina Salad",
+            image: "/img/gallery/img_1.webp",
             authorImg: "/img/top-chiefs/img_1.jpg",
         }, 
         {
-            title: "Spaghetti and Meatballs",
-            image: "/img/gallery/img_4.jpg",
+            title: "Healthiest Spaghetti",
+            image: "/img/gallery/img_9.webp",
             authorImg: "/img/top-chiefs/img_2.jpg",
         },
         {
-            title: "American Cheese Burger",
-            image: "/img/gallery/img_5.jpg",
+            title: "Protein Rich Salad",
+            image: "/img/gallery/img_2.webp",
             authorImg: "/img/top-chiefs/img_3.jpg",
         },
         {
-            title: "Mutton Biriyani",
-            image: "/img/gallery/img_6.jpg",
+            title: "Avacado Meat Fusion",
+            image: "/img/gallery/img_3.webp",
             authorImg: "/img/top-chiefs/img_5.jpg",
         },
         {
@@ -29,38 +29,38 @@ export default function Recipes(){
             authorImg: "/img/top-chiefs/img_6.jpg",
         },
         {
-            title: "Chicken Pan Pizza",
+            title: "200 Calories Pan Pizza",
             image: "/img/gallery/img_1.jpg",
             authorImg: "/img/top-chiefs/img_1.jpg",
         }, 
         {
-            title: "Spaghetti and Meatballs",
+            title: "Spaghetti within 100 Calories",
             image: "/img/gallery/img_4.jpg",
             authorImg: "/img/top-chiefs/img_2.jpg",
         },
         {
-            title: "American Cheese Burger",
-            image: "/img/gallery/img_5.jpg",
+            title: "50 Calories Cookie",
+            image: "/img/gallery/img_6.webp",
             authorImg: "/img/top-chiefs/img_3.jpg",
         },
         {
-            title: "Mutton Biriyani",
+            title: "60g Protein Chicken ",
             image: "/img/gallery/img_6.jpg",
             authorImg: "/img/top-chiefs/img_5.jpg",
         },
         {
-            title: "Japanese Sushi",
-            image: "/img/gallery/img_10.jpg",
+            title: "Cabbage Soup",
+            image: "/img/gallery/img_8.webp",
             authorImg: "/img/top-chiefs/img_6.jpg",
         },
         {
-            title: "American Cheese Burger",
+            title: "100 Calories Burger",
             image: "/img/gallery/img_5.jpg",
             authorImg: "/img/top-chiefs/img_3.jpg",
         },
         {
-            title: "Mutton Biriyani",
-            image: "/img/gallery/img_6.jpg",
+            title: "Chickpea Salad",
+            image: "/img/gallery/img_7.webp",
             authorImg: "/img/top-chiefs/img_5.jpg",
         }
     ].sort(() => Math.random() - 0.5)
