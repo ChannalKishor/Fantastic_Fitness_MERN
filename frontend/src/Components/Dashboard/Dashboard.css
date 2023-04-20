@@ -16,12 +16,24 @@
 }
 
 .bmi, .calorie, .heart-rate, .oxygen-value, .steps-taken{
-    display: flex;
     padding: 0px 10px;
+    margin-right: 5rem;
+}
+
+.bmiimg{
+    width: 50px;
+    height: 50px;
 }
 
 .data{
     /* margin-left: -5rem; */
     display: flex;
     padding-right: 3rem;
+}
+
+.vitals{
+    transform: rotate(-0deg);
+    font-size: 30px;
+    margin-right: 3rem;
+    margin-top: -2.5rem;
 }

@@ -25,7 +25,7 @@ let endDate = end.toLocaleDateString('en-US');
           <p>Start Date: {startDate}</p>
           <p>End Date: {endDate}</p>
           </div>
-          <table className='tablemain'>
+          <table className='tablemain table'>
             <tbody>
             <tr>
                 <th style={{fontSize:"25px"}}>Day</th>

@@ -17,8 +17,9 @@ import trainer4 from "../../Images/trainer4.jpg";
 import trainer5 from "../../Images/trainer5.jpg";
 import trainer6 from "../../Images/trainer6.jpg";
 import { Link } from "react-router-dom";
-import customimg from "../../Images/customimg.jpg"
+import customimg from "../../Images/customimg.jpg";
 import CreateSection from "../../Components/CreateSection/CreateSection";
+import WorkoutList from "../../Components/WorkoutList/WorkoutList"
 
 const Exercise = () => {
   const [bodyPart, setBodyPart] = useState("all");
@@ -32,8 +33,8 @@ const Exercise = () => {
   };
 
   const selectplan = (p) => {
-    setDayplan(p)
-  }
+    setDayplan(p);
+  };
 
   return (
     <div>
@@ -102,31 +103,57 @@ const Exercise = () => {
           <div>
             <ul className="exheadings">
               <li>
-                <a href="#3daymen" onClick={(e) => {
-    e.preventDefault();
-    selectplan("3daymen");}}><button>3-day workout plan</button></a>
+                <a
+                  href="#3daymen"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    selectplan("3daymen");
+                  }}
+                >
+                  <button>3-day workout plan</button>
+                </a>
               </li>
               <li>
-                <a href="#5daywomen" onClick={(e) => {
-    e.preventDefault();
-    selectplan("5daywomen");}}><button>5-day workout plan</button></a>
+                <a
+                  href="#5daywomen"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    selectplan("5daywomen");
+                  }}
+                >
+                  <button>5-day workout plan</button>
+                </a>
               </li>
             </ul>
           </div>
-          <div id="3daymen" className="tablemen" style={{ color: "black", display: dayplan === "3daymen" ? "block" : "none"  }}>
+          <div
+            id="3daymen"
+            className="tablemen"
+            style={{
+              color: "black",
+              display: dayplan === "3daymen" ? "block" : "none",
+            }}
+          >
             <a href="/3dayplan">Muscle Build</a>
             <a href="/3dayplan">Core Strength</a>
             <a href="/3dayplan">Bench Press</a>
           </div>
 
-          <div id="5daywomen" className="tablemen" style={{ color: "black", display: dayplan === "5daywomen" ? "block" : "none"  }}>
+          <div
+            id="5daywomen"
+            className="tablemen"
+            style={{
+              color: "black",
+              display: dayplan === "5daywomen" ? "block" : "none",
+            }}
+          >
             <a href="/3dayplan">Lower Body</a>
             <a href="/3dayplan">Summer Burn</a>
             <a href="/3dayplan">Body Tone</a>
           </div>
-          <h1 style={{textAlign:"center"}}>------ OR -----</h1>
-          <h2 style={{textAlign:"center"}}>Customise Your Workout</h2>
-          <img src={customimg} alt="" className="customimg"/>
+          <h1 style={{ textAlign: "center" }}>------ OR -----</h1>
+          <h2 style={{ textAlign: "center" }}>Customise Your Workout</h2>
+          <img src={customimg} alt="" className="customimg" />
           <div className="choosemain">
             <ul className="chooseul">
               <li className="chooseli">
@@ -145,6 +172,9 @@ const Exercise = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+          <div>
+            <WorkoutList/>
           </div>
         </div>
       </div>
@@ -169,7 +199,7 @@ const Exercise = () => {
         </div>
         <h2 style={{ textAlign: "center" }}>Our Categories</h2>
         <section className="services" style={{ display: "flex" }}>
-          <Service title="Cardio" imgUrl={ImageCardio} navi="/abs" />
+          <Service title="Cardio" imgUrl={ImageCardio} navi="/cardio" />
           <Service title="Abs Workout" imgUrl={ImageRun} navi="/abs" />
           <Service title="Fitness Events" imgUrl={ImageTrainer} navi="/abs" />
         </section>
@@ -178,39 +208,17 @@ const Exercise = () => {
           <div className="trainers">
             <div className="trainer">
               <img src={trainer1} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
+              <h4>John Harry</h4>
             </div>
 
             <div className="trainer">
               <img src={trainer2} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
+              <h4>Chris Larry</h4>
             </div>
 
             <div className="trainer">
               <img src={trainer3} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
-            </div>
-          </div>
-          <div className="trainers">
-            <div className="trainer">
-              <img src={trainer4} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
-            </div>
-
-            <div className="trainer">
-              <img src={trainer5} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
-            </div>
-
-            <div className="trainer">
-              <img src={trainer6} alt="" />
-              <h4>Name</h4>
-              <p>Starts</p>
+              <h4>Jane Audrey</h4>
             </div>
           </div>
         </div>

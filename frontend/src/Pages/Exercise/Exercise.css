@@ -119,7 +119,7 @@
 .exheadings button:hover{
   cursor: pointer;
   border-radius: 10px;
-  transform: scale(1.1);
+  transform: scale(1.3);
   background-color: transparent;
   border: 1px solid black;
   color: black;

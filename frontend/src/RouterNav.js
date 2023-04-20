@@ -8,6 +8,7 @@ import WorkoutEdit from "./Components/WorkoutEdit/WorkoutEdit";
 import WorkoutCreate from "./Components/WorkoutCreate/WorkoutCreate";
 import CreateSection from "./Components/CreateSection/CreateSection";
 import WorkoutList from "./Components/WorkoutList/WorkoutList"
+import Cardio from './Components/Cardio/Cardio';
 
 const RouterNav = () => {
   return (
@@ -22,6 +23,7 @@ const RouterNav = () => {
                 <Route path="/create" Component={WorkoutCreate}></Route>
                 <Route path="/user" Component={CreateSection}></Route>
                 <Route path="/list" Component={WorkoutList}></Route>
+                <Route path="/cardio" Component={Cardio}></Route>
             </Routes>
     </BrowserRouter>
     </div>

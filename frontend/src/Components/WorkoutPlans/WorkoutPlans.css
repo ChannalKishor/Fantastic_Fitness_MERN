@@ -41,7 +41,7 @@
     margin-right: 2rem;
 }
 
-table, tr, td, p{
+.table tr td p{
     color: white;
     
 }
