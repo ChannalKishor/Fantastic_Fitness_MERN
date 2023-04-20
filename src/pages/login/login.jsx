@@ -51,7 +51,7 @@ function Login() {
       <div className="login-container">
         <div className="login-row">
           <h2 className="login-title">Login</h2>
-          <hr/>
+          <hr />
         </div>
 
         <div className="login-row">

@@ -35,7 +35,7 @@ function Register() {
     >
       <div style={{ padding: "1rem" }} className="card reg">
         <h1 style={{ textAlign: "center" }} className="reg">
-          Student Registration
+          Member Registration
         </h1>
         <form>
           <div className="form-group reg">
