@@ -11,6 +11,8 @@ import Trainers from "./pages/trainers/Trainers";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./pages/login/login";
+import UserRegistation from "./pages/login/Register";
+import Homelogin from "./pages/login/Home";
 
 const App = () => {
   return (
@@ -25,6 +27,9 @@ const App = () => {
         <Route path="trainers" element={<Trainers />} />
         <Route path="*" element={<NotFound />} />
         <Route path="login" element={<Login />} />
+        <Route path="/home" element={<Homelogin />} />
+        <Route path="/register" element={<UserRegistation />} />
+        <Route path="/" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>

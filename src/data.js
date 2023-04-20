@@ -25,10 +25,10 @@ export const links = [
     name: "Contact",
     path: "/contact",
   },
-  
+
   {
     name: "Register",
-    path: "/contact",
+    path: "/Register",
   },
 ];
 

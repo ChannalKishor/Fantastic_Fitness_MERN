@@ -172,6 +172,7 @@ section {
   height: 20rem;
   overflow: hidden;
   border-bottom: 2px solid var(--color-gray-400);
+  padding-top: 25rem;
 }
 
 .header__container {
