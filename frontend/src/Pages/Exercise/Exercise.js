@@ -25,10 +25,15 @@ const Exercise = () => {
   const [exercises, setExercises] = useState([]);
 
   const [visibleSection, setVisibleSection] = useState("training");
+  const [dayplan, setDayplan] = useState("");
 
   const handleSectionClick = (sectionId) => {
     setVisibleSection(sectionId);
   };
+
+  const selectplan = (p) => {
+    setDayplan(p)
+  }
 
   return (
     <div>
@@ -97,18 +102,29 @@ const Exercise = () => {
           <div>
             <ul className="exheadings">
               <li>
-                <a href="#types">3-day workout plan</a>
+                <a href="#3daymen" onClick={(e) => {
+    e.preventDefault();
+    selectplan("3daymen");}}><button>3-day workout plan</button></a>
               </li>
               <li>
-                <a href="#5daymen">5-day workout plan</a>
+                <a href="#5daywomen" onClick={(e) => {
+    e.preventDefault();
+    selectplan("5daywomen");}}><button>5-day workout plan</button></a>
               </li>
             </ul>
           </div>
-          <div id="3daymen" className="tablemen" style={{ color: "black" }}>
+          <div id="3daymen" className="tablemen" style={{ color: "black", display: dayplan === "3daymen" ? "block" : "none"  }}>
             <a href="/3dayplan">Muscle Build</a>
-            <a href="/3dayplan">Strength</a>
-            <a href="/3dayplan">Core</a>
+            <a href="/3dayplan">Core Strength</a>
+            <a href="/3dayplan">Bench Press</a>
           </div>
+
+          <div id="5daywomen" className="tablemen" style={{ color: "black", display: dayplan === "5daywomen" ? "block" : "none"  }}>
+            <a href="/3dayplan">Lower Body</a>
+            <a href="/3dayplan">Summer Burn</a>
+            <a href="/3dayplan">Body Tone</a>
+          </div>
+          <h1 style={{textAlign:"center"}}>------ OR -----</h1>
           <h2 style={{textAlign:"center"}}>Customise Your Workout</h2>
           <img src={customimg} alt="" className="customimg"/>
           <div className="choosemain">
