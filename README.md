@@ -28,34 +28,37 @@ Fitness Web Application is accessible to anyone with an internet connection, mak
 
 ## Landing Page
 
-
-## Member Registration
-
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Landing%20Page.png)
 
 
 ## Plan Workout
 
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Plan%20Workout.png)
 
 
 ## Workout Categories
 
-
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Workout%20Categories.png)
 
 
 ## Chatbot
 
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Chatbot.png)
 
 
 ## Recpies
 
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Recipes.png)
 
 ## E-commerce
 **Products**
 
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Ecommerce.png)
+
 
 **Cart**
 
-
+![alt text](https://github.com/ChannalKishor/WebDesignlGroup16/blob/main/Images%20of%20Working%20Components/Cart.png)
 
 
 ## Conclusion
