@@ -1,0 +1,14 @@
+.section.hero{
+    .typography{
+        padding-right: 1em;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1.75vw;
+        .custom-image{
+            transform: scale(0.1);
+            animation: getAnimationDuration(.3s) popOut forwards;
+        }
+    }
+}

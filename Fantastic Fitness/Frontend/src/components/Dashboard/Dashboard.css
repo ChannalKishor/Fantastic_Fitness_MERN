@@ -1,0 +1,39 @@
+.profile img {
+    border-radius: 50%;
+    height: 55vh;
+    border: 2px solid blue;
+    background-size: cover;
+    margin-top: -1rem;
+    background-position: top;
+}
+
+
+.Dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 5rem;
+}
+
+.bmi, .calorie, .heart-rate, .oxygen-value, .steps-taken{
+    padding: 0px 10px;
+    margin-right: 5rem;
+}
+
+.bmiimg{
+    width: 50px;
+    height: 50px;
+}
+
+.data{
+    /* margin-left: -5rem; */
+    display: flex;
+    padding-right: 3rem;
+    margin-top: 13rem;
+}
+
+.vitals{
+    transform: rotate(-0deg);
+    font-size: 30px;
+    margin-right: 3rem;
+    margin-top: -5rem;
+}

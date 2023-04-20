@@ -1,0 +1,96 @@
+{
+    "planName": "Men's Workout Plan - 2 Weeks (3 Day Plan)",
+    "description": "A workout plan for men that spans over 2 weeks and includes 3 workouts per week.",
+    "startDate": "2023-05-01",
+    "endDate": "2023-05-14",
+    "workouts": [
+      {
+        "day": 1,
+        "exercises": [
+          {
+            "name": "Barbell Squat",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Dumbbell Bench Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Seated Cable Row",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Barbell Curl",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "exercises": [
+          {
+            "name": "Deadlift",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Pull-ups",
+            "sets": 3,
+            "reps": "to failure",
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Lateral Raises",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "exercises": [
+          {
+            "name": "Barbell Lunges",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Lat Pulldowns",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          },
+          {
+            "name": "Skull Crushers",
+            "sets": 3,
+            "reps": 10,
+            "rest": "60 seconds"
+          }
+        ]
+      }
+    ]
+  }
+  

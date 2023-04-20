@@ -1,0 +1,53 @@
+.bg {
+  background-color: var(--global-company-color);
+}
+.wt {
+  color: white;
+}
+.center {
+  text-align: center;
+}
+h4{
+  color: white;
+}
+.feature__img {
+  width: 80px;
+  height: 80px;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px 0 rgba(250, 250, 250, 0);
+  transition: 0.3s;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.feature:hover {
+  box-shadow: 0 8px 16px 0 rgb(250, 249, 249,0.3);
+  cursor: pointer;
+}
+
+.image4{
+  border-radius: 30%;
+  border: 1px solid black
+}
+
+.featuremain{
+  background-image: url("../../Images/featurebgimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+}

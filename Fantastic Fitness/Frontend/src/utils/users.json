@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "John",
+      "age": 25,
+      "height": 180,
+      "weight": 75,
+      "calorie": {
+        "date": "2023-04-18",
+        "caloriesConsumed": 2000,
+        "caloriesBurned": 1500,
+        "netCalories": 500
+      },
+      "heartRate": {
+        "date": "2023-04-18",
+        "heartRate": 72
+      },
+      "oxygenValue": {
+        "date": "2023-04-18",
+        "oxygenValue": 120
+      }
+    },
+    {
+      "name": "Jane",
+      "age": 30,
+      "height": 165,
+      "weight": 60,
+      "calorie": {
+        "date": "2023-04-18",
+        "caloriesConsumed": 1800,
+        "caloriesBurned": 1200,
+        "netCalories": 600
+      },
+      "heartRate": {
+        "date": "2023-04-18",
+        "heartRate": 65
+      },
+      "oxygenValue": {
+        "date": "2023-04-18",
+        "oxygenValue": 110
+      }
+    }
+  ]
+}

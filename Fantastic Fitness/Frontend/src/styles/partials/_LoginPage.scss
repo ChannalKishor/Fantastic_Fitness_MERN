@@ -1,0 +1,97 @@
+    
+/* Use a CSS reset to remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply a background color to the body */
+body {
+  background-color: #f5f5f5;
+}
+
+/* Define a reusable box class */
+.box {
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  width: 400px;
+  
+}
+
+/* Center the login page vertically and horizontally */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ 
+}
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  margin-left: 2px;
+  
+
+}
+
+
+/* Style the form inputs */
+.login-input {
+  
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin: 10px auto;
+  padding-left: 10px;
+}
+
+// .select{
+//   display: block;
+//   width: 500px;
+//   padding: 0.5rem;
+// }
+
+select {
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 350px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #555;
+}
+
+/* Style the login button */
+.login-button {
+  margin: 20px 10px 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Change the button background color on hover */
+.login-button:hover {
+  background-color: #0062cc;
+}

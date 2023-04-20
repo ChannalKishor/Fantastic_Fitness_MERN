@@ -1,0 +1,21 @@
+.blocks{
+    display:flex;
+    flex-wrap: nowrap;
+    width:100%;
+    /* padding: 1rem 4rem */
+}
+
+.eachblock{
+    width: 33.33%;
+    margin-left: 1.5rem;
+}
+
+.eachblock img{
+    width:400px;
+    height:300px
+}
+
+.eachblock h2{
+    color: black;
+    text-align: center;
+}

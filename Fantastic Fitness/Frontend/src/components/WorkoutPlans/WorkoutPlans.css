@@ -1,0 +1,64 @@
+.tablemain{
+    border: 1px solid gainsboro;
+    width: 80%;
+    color: white;
+    margin-left: 10%;
+}
+
+.plansmain{
+    background: url("../../Images/gym.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+    color: white;
+    padding: 2rem;
+}
+
+.workoutsdata{
+    text-align: center;
+    padding: 2rem;
+}
+
+.workoutsdata ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.daynum{
+    text-align: center;
+}
+
+.tabletr{
+    padding: 1rem;
+}
+
+.workoutsdata ul li{
+    margin-right: 2rem;
+}
+
+.table tr td p{
+    color: white;
+    
+}
+.animate {
+    position: relative;
+  left: -100%;
+  animation: slide-in 2s ease-out forwards;
+  /* text-align: center; */
+}
+
+@keyframes slide-in {
+  0% {
+    left: -80%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 0%;
+  }
+}

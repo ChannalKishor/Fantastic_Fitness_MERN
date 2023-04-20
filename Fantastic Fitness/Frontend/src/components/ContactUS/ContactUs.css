@@ -1,0 +1,61 @@
+.contactmain{
+    text-align: center;
+    background-image: url("../../Images/contact.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: max-content;
+}
+
+.contactform{
+    padding: 1rem 5rem;
+    border: 2px solid black;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.contactform input, textarea{
+    width: 80%;
+    margin-bottom: 0.8rem;
+}
+
+.contactsub{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageicon{
+    height: 20px;
+    width: 20px;
+}
+
+.formsection{
+    padding: 0.5rem;
+}
+
+.sendbtn{
+    border: black;
+}
+
+.sendbtn:hover{
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    border: blue;
+}
+
+
+@media (min-width:350px) and (max-width:699px){
+.phone{
+    width: 30%;
+}
+
+.contactform {
+    padding: 0rem 3rem;
+}
+}
