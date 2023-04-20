@@ -5,6 +5,8 @@ import { ThemeProvider } from "styled-components";
 // import { Button } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+
 // import { Segment } from "semantic-ui-react";
 
 const theme = {
@@ -17,6 +19,81 @@ const theme = {
   botFontColor: "#fff",
   userBubbleColor: "#fff",
   userFontColor: "#4a4a4a",
+};
+
+const TicketForm = (props) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [issue, setIssue] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const api = axios.create({
+      baseURL: "http://localhost:3001",
+    });
+
+    const formData = new URLSearchParams();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("issue", issue);
+
+    const data = {};
+    for (let [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    // Send the form data to the backend
+    api
+      .post("/api/tickets", data)
+      .then((response) => {
+        console.log("Ticket created:", response.data);
+
+        // Update the chatbot to inform the user that their ticket has been created
+        props.triggerNextStep();
+      })
+      .catch((error) => {
+        console.log(name);
+        console.log(email);
+        console.log(issue);
+        console.log(data);
+        console.error("Failed to create ticket:", error);
+      });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} style={{ maxWidth: "250px" }}>
+      <label style={{ display: "block", margin: "10px 0" }}>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={{ width: "92%", padding: "8px" }}
+        />
+      </label>
+      <label style={{ display: "block", margin: "10px 0" }}>
+        Email:
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ width: "92%", padding: "8px" }}
+        />
+      </label>
+      <label style={{ display: "block", margin: "10px 0" }}>
+        Issue:
+        <textarea
+          value={issue}
+          onChange={(e) => setIssue(e.target.value)}
+          style={{ width: "92%", padding: "8px" }}
+        ></textarea>
+      </label>
+      <button type="submit" style={{ display: "block", margin: "10px 0" }}>
+        Submit
+      </button>
+    </form>
+  );
 };
 
 const bot_messages = [
@@ -533,14 +610,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-          <strong>Snack (100 calories)</strong>:
+            <strong>Snack (100 calories)</strong>:
             <ul>
               <li>1/2 cup blueberries (40 calories)</li>
               <li>1 low-fat string cheese (60 calories)</li>
             </ul>
           </li>
           <li>
-          <strong>Lunch (400 calories)</strong>:
+            <strong>Lunch (400 calories)</strong>:
             <ul>
               <li>Grilled chicken breast (120 calories)</li>
               <li>1/2 cup brown rice (110 calories)</li>
@@ -549,14 +626,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-          <strong>Snack (100 calories)</strong>:
+            <strong>Snack (100 calories)</strong>:
             <ul>
               <li>1 medium carrot (25 calories)</li>
               <li>2 tablespoons hummus (75 calories)</li>
             </ul>
           </li>
           <li>
-          <strong>Dinner (500 calories)</strong>:
+            <strong>Dinner (500 calories)</strong>:
             <ul>
               <li>Grilled salmon (200 calories)</li>
               <li>1 cup quinoa (220 calories)</li>
@@ -584,7 +661,7 @@ const bot_messages = [
       <div class="workout">
         <ol>
           <li>
-          <strong>Breakfast (600-800 calories):</strong>
+            <strong>Breakfast (600-800 calories):</strong>
             <ul>
               <li>2-3 eggs (140-210 calories per egg)</li>
               <li>2 slices of whole-grain bread (200 calories)</li>
@@ -595,14 +672,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-          <strong>Mid-Morning Snack (300-400 calories):</strong>
+            <strong>Mid-Morning Snack (300-400 calories):</strong>
             <ul>
               <li>1 serving of mixed nuts (200-300 calories)</li>
               <li>1 banana (100 calories)</li>
             </ul>
           </li>
           <li>
-          <strong>Lunch (700-900 calories):</strong>
+            <strong>Lunch (700-900 calories):</strong>
             <ul>
               <li>
                 6 oz chicken breast (250-350 calories depending on preparation)
@@ -613,14 +690,14 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-          <strong>Afternoon Snack (300-400 calories):</strong>
+            <strong>Afternoon Snack (300-400 calories):</strong>
             <ul>
               <li>1 protein shake (200-300 calories)</li>
               <li>1 apple (100 calories)</li>
             </ul>
           </li>
           <li>
-          <strong>Dinner (800-1000 calories):</strong>
+            <strong>Dinner (800-1000 calories):</strong>
             <ul>
               <li>8 oz salmon (400-500 calories depending on preparation)</li>
               <li>2 cups of brown rice (300-400 calories)</li>
@@ -629,7 +706,7 @@ const bot_messages = [
             </ul>
           </li>
           <li>
-          <strong>Evening Snack (300-400 calories):</strong>
+            <strong>Evening Snack (300-400 calories):</strong>
             <ul>
               <li>1 serving of Greek yogurt (150-200 calories)</li>
               <li>1 serving of mixed berries (100-150 calories)</li>
@@ -661,11 +738,51 @@ const bot_messages = [
         </ol>
       </div>
     ),
-    trigger:"Continue message",
+    trigger: "Continue message",
   },
+
+  // Customer Support
   {
     id: "Customer Support",
-    message: "Angular issue",
+    message: "Hi, how can I help you?",
+    trigger: "Support options",
+  },
+  {
+    id: "Support options",
+    options: [
+      {
+        value: "Issue",
+        label: "Report an issue",
+        trigger: "Issue form",
+      },
+      {
+        value: "Question",
+        label: "Ask a question",
+        trigger: "Question response",
+      },
+    ],
+  },
+  {
+    id: "Issue form",
+    message: "Please fill out the form below to report your issue.",
+    trigger: "ticket_form",
+  },
+  {
+    id: "Question response",
+    message:
+      "I am sorry, I cannot answer that. Please contact support for further assistance.",
+    end: true,
+  },
+  {
+    id: "ticket_form",
+    component: <TicketForm />,
+    waitAction: true,
+    trigger: "Thank you",
+  },
+  {
+    id: "Thank you",
+    message:
+      "Thank you for contacting us. Your ticket has been created and a support representative will be in touch with you shortly.",
     end: true,
   },
 ];
@@ -695,7 +812,11 @@ function App() {
       >
         <FontAwesomeIcon icon={faRedoAlt} /> */}
       {/* </Button> */}
-      <FontAwesomeIcon icon={faRedoAlt} className="reload-icon" onClick={handleReload} />
+      <FontAwesomeIcon
+        icon={faRedoAlt}
+        className="reload-icon"
+        onClick={handleReload}
+      />
     </div>
   );
 
