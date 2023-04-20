@@ -62,6 +62,7 @@
 // });
 
 const express = require('express');
+const bodyParser = require("body-parser");
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -72,9 +73,10 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect("mongodb://localhost:27017/workout-plans");
+mongoose.connect("mongodb://localhost:27017/finalworkout");
 
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -87,6 +89,37 @@ const usersRouter = require('./routes/users');
 app.use('/workouts', workoutsRouter);
 app.use('/users', usersRouter);
 
+// define the ticket schema
+const ticketSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    issue: String,
+    date: { type: Date, default: Date.now },
+  });
+  
+  // define the ticket model
+  const Ticket = mongoose.model("Ticket", ticketSchema);
+  
+
+// define the POST API endpoint for creating new tickets
+app.post("/api/tickets", (req, res) => {
+    const { name, email, issue } = req.body;
+  
+    // create a new ticket using the Ticket model
+    const newTicket = new Ticket({ name, email, issue });
+  
+    // save the new ticket to the database
+    newTicket
+      .save()
+      .then((savedTicket) => {
+        console.log("Ticket created:", savedTicket);
+        res.json(savedTicket);
+      })
+      .catch((err) => {
+        console.error("Failed to create ticket:", err);
+        res.status(500).json({ error: "Failed to create ticket" });
+      });
+  });
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

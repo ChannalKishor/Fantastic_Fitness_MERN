@@ -9,6 +9,7 @@ import WorkoutCreate from "./Components/WorkoutCreate/WorkoutCreate";
 import CreateSection from "./Components/CreateSection/CreateSection";
 import WorkoutList from "./Components/WorkoutList/WorkoutList"
 import Cardio from './Components/Cardio/Cardio';
+import Chatbotfeature from './Components/Chatbot/Chatbot';
 
 const RouterNav = () => {
   return (
@@ -24,6 +25,7 @@ const RouterNav = () => {
                 <Route path="/user" Component={CreateSection}></Route>
                 <Route path="/list" Component={WorkoutList}></Route>
                 <Route path="/cardio" Component={Cardio}></Route>
+                <Route path="/chatbot" Component={Chatbotfeature}></Route>
             </Routes>
     </BrowserRouter>
     </div>
