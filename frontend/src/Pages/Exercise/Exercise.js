@@ -1,0 +1,206 @@
+import React, { useState } from "react";
+import Navbar from "../../Components/Navbar/Navbar";
+import "../Exercise/Exercise.css";
+import exerciseimg from "../../Images/exerciseimg.jpg";
+import SearchExercises from "../../Components/SearchExercises";
+import Exercises from "../../Components/Exercises";
+import menplans from "../../Images/menplans.jpg";
+import womenplans from "../../Images/womenplans.jpg";
+import Service from "../../Components/Service/Srevice";
+import ImageCardio from "../../Images/cardio.jpg";
+import ImageRun from "../../Images/images.jpg";
+import ImageTrainer from "../../Images/trainer.jpg";
+import trainer1 from "../../Images/trainer1.jpg";
+import trainer2 from "../../Images/trainer2.jpg";
+import trainer3 from "../../Images/trainer3.jpg";
+import trainer4 from "../../Images/trainer4.jpg";
+import trainer5 from "../../Images/trainer5.jpg";
+import trainer6 from "../../Images/trainer6.jpg";
+import { Link } from "react-router-dom";
+import customimg from "../../Images/customimg.jpg"
+import CreateSection from "../../Components/CreateSection/CreateSection";
+
+const Exercise = () => {
+  const [bodyPart, setBodyPart] = useState("all");
+  const [exercises, setExercises] = useState([]);
+
+  const [visibleSection, setVisibleSection] = useState("training");
+
+  const handleSectionClick = (sectionId) => {
+    setVisibleSection(sectionId);
+  };
+
+  return (
+    <div>
+      <header>
+        <Navbar />
+      </header>
+      <h1 style={{ textAlign: "center" }}>Plan Your Workout</h1>
+      <div class="navbar">
+        <a href="#exercise" onClick={() => handleSectionClick("exercise")}>
+          Exercise
+        </a>
+        <a href="#" onClick={() => handleSectionClick("plans")}>
+          Workout Plans
+        </a>
+        <a href="#training" onClick={() => handleSectionClick("training")}>
+          Training
+        </a>
+      </div>
+
+      {/* <div
+        id="exercise"
+        style={{ display: visibleSection === "exercise" ? "block" : "none" }}
+      >
+        <div>
+          <h1 style={{ textAlign: "center" }}>
+            The Best Exercises To Include In A Workout Routine
+          </h1>
+          <br />
+          <img src={exerciseimg} className="exerciseimg" alt="" />
+        </div>
+        <div>
+          <box>
+            <SearchExercises
+              setExercises={setExercises}
+              bodyPart={bodyPart}
+              setBodyPart={setBodyPart}
+            />
+            <Exercises
+              exercises={exercises}
+              setExercises={setExercises}
+              bodyPart={bodyPart}
+            />
+          </box>
+        </div>
+      </div> */}
+
+      <div
+        id="plans"
+        style={{ display: visibleSection === "plans" ? "block" : "none" }}
+      >
+        <div className="twoimages">
+          <div style={{ display: "flex" }}>
+            <img
+              src={menplans}
+              style={{ width: "50%" }}
+              className="image1"
+              alt="image"
+            />
+            <img
+              src={womenplans}
+              style={{ width: "50%" }}
+              className="image2"
+              alt="image"
+            />
+          </div>
+          <div>
+            <ul className="exheadings">
+              <li>
+                <a href="#types">3-day workout plan</a>
+              </li>
+              <li>
+                <a href="#5daymen">5-day workout plan</a>
+              </li>
+            </ul>
+          </div>
+          <div id="3daymen" className="tablemen" style={{ color: "black" }}>
+            <a href="/3dayplan">Muscle Build</a>
+            <a href="/3dayplan">Strength</a>
+            <a href="/3dayplan">Core</a>
+          </div>
+          <h2 style={{textAlign:"center"}}>Customise Your Workout</h2>
+          <img src={customimg} alt="" className="customimg"/>
+          <div className="choosemain">
+            <ul className="chooseul">
+              <li className="chooseli">
+                <Link to="/list" className="nav-link">
+                  Workouts
+                </Link>
+              </li>
+              <li className="chooseli">
+                <Link to="/create" className="nav-link">
+                  Create Workout Log
+                </Link>
+              </li>
+              <li className="chooseli">
+                <Link to="/user" className="nav-link">
+                  Set Type
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="training"
+        style={{ display: visibleSection === "training" ? "block" : "none" }}
+      >
+        <div class="hero1 node-12">
+          <div class="overlay">
+            <h1 className="t_head">TRAIN WITH US</h1>
+            {/* <p className="t_para1">
+              The most comprehensive workout routines anywhere! Download workout
+              plans any goal or experience level.
+            </p> */}
+            <p className="t_para2">
+              Choose a category that best suits the workout you're searching
+              for. Once in the category, use the sort and filter options to find
+              the right workout for your experience and goals.
+            </p>
+          </div>
+        </div>
+        <h2 style={{ textAlign: "center" }}>Our Categories</h2>
+        <section className="services" style={{ display: "flex" }}>
+          <Service title="Cardio" imgUrl={ImageCardio} navi="/abs" />
+          <Service title="Abs Workout" imgUrl={ImageRun} navi="/abs" />
+          <Service title="Fitness Events" imgUrl={ImageTrainer} navi="/abs" />
+        </section>
+        <div className="trainersmain">
+          <h2 style={{ textAlign: "center" }}>Our Trainers</h2>
+          <div className="trainers">
+            <div className="trainer">
+              <img src={trainer1} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+
+            <div className="trainer">
+              <img src={trainer2} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+
+            <div className="trainer">
+              <img src={trainer3} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+          </div>
+          <div className="trainers">
+            <div className="trainer">
+              <img src={trainer4} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+
+            <div className="trainer">
+              <img src={trainer5} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+
+            <div className="trainer">
+              <img src={trainer6} alt="" />
+              <h4>Name</h4>
+              <p>Starts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Exercise;
